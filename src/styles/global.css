@@ -69,3 +69,101 @@ body {
   background-image: url('/images/topo-pattern.svg');
   background-repeat: repeat;
 }
+
+/* Hero entrance animations */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 0.6s ease-out forwards;
+}
+
+.hero-animate.delay-1 { animation-delay: 0.1s; }
+.hero-animate.delay-2 { animation-delay: 0.2s; }
+.hero-animate.delay-3 { animation-delay: 0.3s; }
+.hero-animate.delay-4 { animation-delay: 0.4s; }
+.hero-animate.delay-5 { animation-delay: 0.5s; }
+.hero-animate.delay-6 { animation-delay: 0.6s; }
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger delays for scroll-triggered animations */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Counter animation */
+.count-up {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card lift effect */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+}
+
+/* Accordion smooth transition */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.accordion-content.open {
+  max-height: 500px;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+/* Button micro-interaction */
+.btn-animate {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.btn-animate:hover {
+  transform: scale(1.02);
+}
+.btn-animate:active {
+  transform: scale(0.98);
+}
+
+/* Arrow slide on hover */
+.arrow-slide {
+  transition: transform 0.2s ease;
+}
+.group:hover .arrow-slide,
+.btn-animate:hover .arrow-slide {
+  transform: translateX(4px);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .fade-in,
+  .card-lift,
+  .btn-animate,
+  .accordion-content,
+  .arrow-slide {
+    animation: none;
+    transition: none;
+  }
+  .hero-animate {
+    opacity: 1;
+    transform: none;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+}

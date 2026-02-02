@@ -6,10 +6,10 @@ interface Props {
 const { dark = false } = Astro.props;
 
 const stats = [
-  { value: '$400K+', label: 'Won for Clients' },
-  { value: '50+', label: 'Jury Trials' },
-  { value: '24+', label: 'Years Experience' },
-  { value: '1000s', label: 'Families Helped' }
+  { value: '400', prefix: '$', suffix: 'K+', label: 'Won for Clients' },
+  { value: '50', suffix: '+', label: 'Jury Trials' },
+  { value: '24', suffix: '+', label: 'Years Experience' },
+  { value: '1000', suffix: 's', label: 'Families Helped' }
 ];
 ---
 
@@ -20,12 +20,17 @@ const stats = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
       {stats.map(stat => (
-        <div class="text-center">
-          <div class:list={[
-            "font-[family-name:var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-bold mb-0.5",
-            dark ? "text-gold-500" : "text-navy-900"
-          ]}>
-            {stat.value}
+        <div class="text-center fade-in">
+          <div
+            class:list={[
+              "font-[family-name:var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-bold mb-0.5 count-up",
+              dark ? "text-gold-500" : "text-navy-900"
+            ]}
+            data-count-to={stat.value}
+            data-prefix={stat.prefix || ''}
+            data-suffix={stat.suffix || ''}
+          >
+            {stat.prefix || ''}{stat.value}{stat.suffix || ''}
           </div>
           <div class:list={[
             "text-xs md:text-sm font-medium uppercase tracking-wide",

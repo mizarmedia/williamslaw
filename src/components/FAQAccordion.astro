@@ -14,22 +14,22 @@ const { items, id = 'faq' } = Astro.props;
 
 <div class="space-y-2" id={id}>
   {items.map((item, index) => (
-    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden bg-white">
+    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden bg-white transition-colors duration-200">
       <button
         class="faq-trigger w-full flex items-center justify-between p-4 text-left font-semibold text-navy-900 hover:bg-gray-50 transition-colors text-sm md:text-base"
         aria-expanded="false"
         aria-controls={`${id}-answer-${index}`}
       >
         <span>{item.question}</span>
-        <svg class="faq-icon w-5 h-5 text-gold-500 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="faq-icon w-5 h-5 text-gold-500 transition-transform duration-300 ease-out flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       <div
         id={`${id}-answer-${index}`}
-        class="faq-content hidden px-4 pb-4"
+        class="faq-content accordion-content px-4"
       >
-        <p class="text-text-gray leading-relaxed" set:html={item.answer} />
+        <p class="text-text-gray leading-relaxed text-sm md:text-base" set:html={item.answer} />
       </div>
     </div>
   ))}
@@ -51,15 +51,17 @@ const { items, id = 'faq' } = Astro.props;
           const otherContent = otherItem.querySelector('.faq-content');
           const otherIcon = otherItem.querySelector('.faq-icon');
           otherTrigger?.setAttribute('aria-expanded', 'false');
-          otherContent?.classList.add('hidden');
+          otherContent?.classList.remove('open');
           otherIcon?.classList.remove('rotate-180');
+          (otherItem as HTMLElement).classList.remove('bg-gold-500/5');
         }
       });
 
       // Toggle current FAQ
       trigger.setAttribute('aria-expanded', String(!isExpanded));
-      content?.classList.toggle('hidden');
+      content?.classList.toggle('open');
       icon?.classList.toggle('rotate-180');
+      (item as HTMLElement)?.classList.toggle('bg-gold-500/5');
     });
   });
 </script>

@@ -58,19 +58,19 @@ const results = [
     <div class="bg-navy-900 rounded-lg p-4 md:p-6 mb-6 md:mb-10 fade-in">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center">
         <div>
-          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500">$400K+</div>
+          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500 count-up" data-count-to="400" data-prefix="$" data-suffix="K+">$400K+</div>
           <div class="text-xs text-gray-300 mt-0.5">Won for Clients</div>
         </div>
         <div>
-          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500">50+</div>
+          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500 count-up" data-count-to="50" data-suffix="+">50+</div>
           <div class="text-xs text-gray-300 mt-0.5">Jury Trials</div>
         </div>
         <div>
-          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500">24+</div>
+          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500 count-up" data-count-to="24" data-suffix="+">24+</div>
           <div class="text-xs text-gray-300 mt-0.5">Years Experience</div>
         </div>
         <div>
-          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500">1000s</div>
+          <div class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-gold-500 count-up" data-count-to="1000" data-suffix="s">1000s</div>
           <div class="text-xs text-gray-300 mt-0.5">Families Helped</div>
         </div>
       </div>
@@ -80,7 +80,7 @@ const results = [
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
       {results.map((result, index) => (
         <div
-          class="bg-white p-3 md:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:border-gold-500/30 transition-all duration-300 fade-in"
+          class="bg-white p-3 md:p-5 rounded-lg shadow-sm border border-gray-100 hover:border-gold-500/30 card-lift fade-in"
           style={`transition-delay: ${index * 50}ms`}
         >
           <span class="inline-block px-2 py-0.5 bg-gold-500/10 text-gold-500 text-xs font-semibold uppercase tracking-wide rounded-full mb-2">
@@ -103,10 +103,10 @@ const results = [
     <div class="text-center mt-6 md:mt-8 fade-in">
       <a
         href="/results/"
-        class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded transition-colors"
+        class="btn-animate inline-flex items-center px-5 py-2 md:px-6 md:py-3 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm rounded"
       >
         View All Case Results
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 ml-2 arrow-slide" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </a>

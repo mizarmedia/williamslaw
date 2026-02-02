@@ -169,9 +169,10 @@ const canonicalUrl = canonical || `https://mattwilliams.law${currentPath}`;
 
     <!-- Scroll animation script -->
     <script>
+      // Fade-in animations on scroll
       const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
       };
 
@@ -179,12 +180,64 @@ const canonicalUrl = canonical || `https://mattwilliams.law${currentPath}`;
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
       document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
+      });
+
+      // Counter animation for stats
+      function animateCounters() {
+        const counters = document.querySelectorAll('[data-count-to]');
+
+        const counterObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              const target = parseInt(el.dataset.countTo || '0');
+              const prefix = el.dataset.prefix || '';
+              const suffix = el.dataset.suffix || '';
+              const duration = 1500;
+              const startTime = performance.now();
+
+              function updateCounter(currentTime: number) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Ease out cubic
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(easeOut * target);
+
+                el.textContent = prefix + current + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  el.textContent = prefix + target + suffix;
+                }
+              }
+
+              requestAnimationFrame(updateCounter);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+      }
+
+      // Run counter animation on page load
+      animateCounters();
+
+      // Re-run on Astro page transitions (View Transitions API)
+      document.addEventListener('astro:page-load', () => {
+        document.querySelectorAll('.fade-in').forEach(el => {
+          observer.observe(el);
+        });
+        animateCounters();
       });
     </script>
   </body>
