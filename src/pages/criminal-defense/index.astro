@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import CTASection from '../../components/CTASection.astro';
+import Icon from '../../components/Icon.astro';
 
 const title = "Criminal Defense Attorney | Eagle & Boise, Idaho | Williams Law";
 const description = "Facing criminal charges in Idaho? Former prosecutor Matt Williams knows both sides of the courtroom. DUI, felonies, domestic violence. Free consultation.";
@@ -13,21 +14,21 @@ const services = [
     title: 'DUI Defense',
     href: '/criminal-defense/dui/',
     description: 'A DUI charge can affect your license, job, and freedom. Matt knows how to challenge the evidence and protect your rights.',
-    icon: '🚗'
+    icon: 'car'
   },
   {
     title: 'Felony Charges',
     href: '/criminal-defense/felonies/',
     description: 'Felonies carry serious penalties including prison time. You need a lawyer who has tried serious cases and knows how to fight.',
-    icon: '⚖️'
+    icon: 'scales'
   },
   {
     title: 'Domestic Violence',
     href: '/criminal-defense/domestic-violence/',
     description: 'DV charges can destroy relationships and careers. Matt defends against false accusations while treating everyone fairly.',
-    icon: '🏠'
+    icon: 'home'
   }
-];
+] as const;
 
 const faqs = [
   {
@@ -105,7 +106,9 @@ const faqs = [
               class="block bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 fade-in"
               style={`transition-delay: ${index * 100}ms`}
             >
-              <div class="text-2xl md:text-3xl mb-2 md:mb-3">{service.icon}</div>
+              <div class="text-gold-500 mb-2 md:mb-3">
+                <Icon name={service.icon} class="w-7 h-7 md:w-9 md:h-9" />
+              </div>
               <h3 class="font-[family-name:var(--font-display)] text-base md:text-lg font-bold text-navy-900 mb-1 md:mb-2">
                 {service.title}
               </h3>

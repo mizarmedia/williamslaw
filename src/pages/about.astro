@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import StatsBar from '../components/StatsBar.astro';
 import CTASection from '../components/CTASection.astro';
+import Icon from '../components/Icon.astro';
 
 const title = "About Matt Williams | Eagle & Boise Criminal Defense Attorney";
 const description = "Former prosecutor turned defender. 24+ years experience. 50+ trials. Learn why Matt Williams fights for regular people against powerful opponents.";
@@ -233,17 +234,23 @@ const timeline = [
 
         <div class="grid grid-cols-3 gap-3 md:gap-5">
           <a href="/criminal-defense/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-            <div class="text-xl md:text-2xl mb-2">⚖️</div>
+            <div class="text-gold-500 mb-2 flex justify-center">
+              <Icon name="scales" class="w-6 h-6 md:w-8 md:h-8" />
+            </div>
             <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Criminal Defense</h3>
             <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
           </a>
           <a href="/family-law/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-            <div class="text-xl md:text-2xl mb-2">👨‍👩‍👧‍👦</div>
+            <div class="text-gold-500 mb-2 flex justify-center">
+              <Icon name="users" class="w-6 h-6 md:w-8 md:h-8" />
+            </div>
             <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Family Law</h3>
             <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
           </a>
           <a href="/civil-litigation/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
-            <div class="text-xl md:text-2xl mb-2">💼</div>
+            <div class="text-gold-500 mb-2 flex justify-center">
+              <Icon name="briefcase" class="w-6 h-6 md:w-8 md:h-8" />
+            </div>
             <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Civil Litigation</h3>
             <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
           </a>

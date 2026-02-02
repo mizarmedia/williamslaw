@@ -5,6 +5,7 @@ import PracticeAreaHero from '../components/PracticeAreaHero.astro';
 import ResultCard from '../components/ResultCard.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import CTASection from '../components/CTASection.astro';
+import Icon from '../components/Icon.astro';
 
 const title = "Civil Litigation Attorney | Eagle & Boise, Idaho | Williams Law";
 const description = "Employment disputes, civil rights violations, personal injury. Attorney Matt Williams fights for people against powerful opponents. $400K verdict. Free consultation.";
@@ -13,34 +14,34 @@ const caseTypes = [
   {
     title: 'Employment Law',
     description: 'Wrongful termination, discrimination, harassment, wage disputes. When your employer treats you unfairly, Matt fights back.',
-    icon: '💼'
+    icon: 'briefcase'
   },
   {
     title: 'Civil Rights',
     description: 'Police misconduct, government overreach, constitutional violations. Your rights matter. Matt holds government accountable.',
-    icon: '⚖️'
+    icon: 'scales'
   },
   {
     title: 'Personal Injury',
     description: 'Car accidents, slip and falls, product defects. When someone else\'s negligence hurts you, Matt gets you compensation.',
-    icon: '🏥'
+    icon: 'medical'
   },
   {
     title: 'Contract Disputes',
     description: 'Business agreements, contractor issues, breach of contract. When someone breaks their word, Matt enforces your rights.',
-    icon: '📄'
+    icon: 'document'
   },
   {
     title: 'Property Disputes',
     description: 'Boundary issues, easements, landlord-tenant conflicts. Property rights can be complicated. Matt makes them clear.',
-    icon: '🏠'
+    icon: 'home'
   },
   {
     title: 'Insurance Bad Faith',
     description: 'When your insurance company won\'t pay a valid claim, that\'s bad faith. Matt knows how to make them pay.',
-    icon: '🛡️'
+    icon: 'shield'
   }
-];
+] as const;
 
 const results = [
   {
@@ -138,7 +139,9 @@ const faqs = [
               class="bg-white p-3 md:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow fade-in"
               style={`transition-delay: ${index * 50}ms`}
             >
-              <div class="text-xl md:text-2xl mb-2">{type.icon}</div>
+              <div class="text-gold-500 mb-2">
+                <Icon name={type.icon} class="w-6 h-6 md:w-8 md:h-8" />
+              </div>
               <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">{type.title}</h3>
               <p class="text-text-gray text-xs md:text-sm">{type.description}</p>
             </div>
