@@ -26,9 +26,7 @@
 }
 
 /* Base styles */
-html {
-  scroll-behavior: smooth;
-}
+/* Note: scroll-behavior: smooth is added via JS after page load to prevent scroll jump */
 
 body {
   font-family: var(--font-body);

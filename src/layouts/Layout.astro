@@ -169,6 +169,14 @@ const canonicalUrl = canonical || `https://mattwilliams.law${currentPath}`;
 
     <!-- Scroll animation script -->
     <script>
+      // Prevent scroll restoration from causing visible scroll
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      // Start at top, then enable smooth scroll
+      window.scrollTo(0, 0);
+      document.documentElement.style.scrollBehavior = 'smooth';
+
       // Fade-in animations on scroll
       const observerOptions = {
         root: null,
