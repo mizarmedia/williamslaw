@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StatsBar from '../components/StatsBar.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = "About Matt Williams | Eagle & Boise Criminal Defense Attorney";
+const description = "Former prosecutor turned defender. 24+ years experience. 50+ trials. Learn why Matt Williams fights for regular people against powerful opponents.";
+
+const credentials = [
+  { label: 'Idaho State Bar', value: 'Licensed since 2000' },
+  { label: 'Education', value: 'University of Idaho College of Law' },
+  { label: 'Former Prosecutor', value: 'Valley County (2004-2013)' },
+  { label: 'Former Prosecutor', value: 'City of Cascade' },
+  { label: 'Former Prosecutor', value: 'City of McCall' },
+  { label: 'Trial Experience', value: '50+ jury trials' }
+];
+
+const timeline = [
+  {
+    year: '2000',
+    title: 'Licensed to Practice',
+    description: 'Matt passed the Idaho Bar and began practicing law. From day one, he was in the courtroom, not behind a desk.'
+  },
+  {
+    year: '2004',
+    title: 'Became a Prosecutor',
+    description: 'Appointed as the Valley County Prosecuting Attorney. Also served as prosecutor for the cities of Cascade and McCall. Spent the next 9 years on the prosecution side.'
+  },
+  {
+    year: '2004-2013',
+    title: 'Learned the System',
+    description: 'As a prosecutor, Matt tried dozens of cases. He learned exactly how the state builds cases, what evidence matters, and what makes cases fall apart.'
+  },
+  {
+    year: '2013',
+    title: 'Made a Choice',
+    description: 'After nearly a decade as a prosecutor, Matt decided to switch sides. He saw too many good people who needed someone to fight for them, not against them.'
+  },
+  {
+    year: '2014-Present',
+    title: 'Fighting for the Defense',
+    description: 'Matt now uses everything he learned as a prosecutor to defend people accused of crimes, families going through difficult times, and regular people wronged by powerful institutions.'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[{ label: 'About Matt' }]} />
+
+    <!-- Hero -->
+    <section class="bg-navy-900 text-white py-10 md:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="text-gold-400 font-semibold uppercase tracking-wider text-xs mb-2">
+            About Your Attorney
+          </p>
+          <h1 class="font-[family-name:var(--font-display)] text-2xl md:text-4xl lg:text-5xl font-bold mb-3">
+            Matthew C. Williams
+          </h1>
+          <p class="text-base md:text-lg text-gray-300">
+            Former Prosecutor. Defense Attorney. Your Advocate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <StatsBar />
+
+    <!-- The Story -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-sm md:prose-base mx-auto">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4 md:mb-6 text-center">
+            From Prosecutor to Defender
+          </h2>
+
+          <p class="text-text-gray text-sm md:text-base">
+            Matt Williams didn't start out as a defense attorney. For almost 10 years, he was a prosecutor - the person who brings charges against people accused of crimes.
+          </p>
+
+          <p class="text-text-gray text-sm md:text-base">
+            As the prosecutor for Valley County, Cascade, and McCall, Matt learned exactly how the system works from the inside. But he also saw <strong>good people who made mistakes</strong>. People who deserved someone to fight for them.
+          </p>
+
+          <p class="text-text-gray text-sm md:text-base">
+            In 2013, Matt made a choice. He left prosecution and started defending people instead.
+          </p>
+
+          <div class="bg-gold-500/10 border-l-4 border-gold-500 p-4 my-6">
+            <p class="text-navy-900 font-medium italic text-sm md:text-base">
+              "I spent years putting people in jail. I know exactly how prosecutors build their cases. Now I use that knowledge to protect my clients."
+            </p>
+            <p class="text-text-gray mt-1 text-xs">— Matt Williams</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Why This Matters for You
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-6">
+          <div class="bg-white p-3 md:p-5 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">He Knows Their Playbook</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              He knows how prosecutors think because he was one. He knows their strategies and their weaknesses.
+            </p>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">50+ Jury Trials</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              More courtroom time than most lawyers get in their entire careers. He's not learning on your case.
+            </p>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Ready to Fight</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Some lawyers avoid trial. Matt is ready to go when that's what's best for you.
+            </p>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Personal Attention</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              You work directly with Matt. He answers your calls and knows your case.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            24 Years of Experience
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          {timeline.map((item, index) => (
+            <div class="flex gap-3 md:gap-5 fade-in" style={`transition-delay: ${index * 100}ms`}>
+              <div class="flex-shrink-0 w-16 md:w-20 text-right">
+                <span class="font-[family-name:var(--font-display)] text-sm md:text-lg font-bold text-gold-500">
+                  {item.year}
+                </span>
+              </div>
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-3 h-3 md:w-4 md:h-4 bg-gold-500 rounded-full"></div>
+                {index < timeline.length - 1 && (
+                  <div class="w-0.5 h-full bg-gold-500/30 mt-1"></div>
+                )}
+              </div>
+              <div class="flex-1 pb-4 md:pb-6">
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">{item.title}</h3>
+                <p class="text-text-gray text-xs md:text-sm">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Roots -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+          <div>
+            <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-3 md:mb-4">
+              Community Roots
+            </h2>
+            <p class="text-text-gray text-sm mb-2 md:mb-3">
+              Matt isn't some big-city lawyer who doesn't understand Idaho. He coached high school football in Cascade. He raised his family here.
+            </p>
+            <p class="text-text-gray text-sm">
+              He knows the judges. He knows the prosecutors. When Matt takes your case, he's helping his neighbor.
+            </p>
+          </div>
+          <div class="bg-navy-900 text-white p-4 md:p-6 rounded-lg">
+            <h3 class="font-semibold text-base mb-3">Areas Served</h3>
+            <div class="grid grid-cols-3 gap-1 text-gray-300 text-xs">
+              <div>Eagle</div>
+              <div>Boise</div>
+              <div>Meridian</div>
+              <div>Nampa</div>
+              <div>Caldwell</div>
+              <div>McCall</div>
+              <div>Valley Co</div>
+              <div>Ada Co</div>
+              <div>Canyon Co</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Credentials
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+          {credentials.map(cred => (
+            <div class="bg-offwhite p-3 md:p-4 rounded-lg text-center">
+              <div class="font-semibold text-navy-900 text-xs md:text-sm mb-0.5">{cred.label}</div>
+              <div class="text-text-gray text-xs">{cred.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice Areas Summary -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            How Matt Can Help
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 md:gap-5">
+          <a href="/criminal-defense/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-xl md:text-2xl mb-2">⚖️</div>
+            <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Criminal Defense</h3>
+            <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
+          </a>
+          <a href="/family-law/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-xl md:text-2xl mb-2">👨‍👩‍👧‍👦</div>
+            <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Family Law</h3>
+            <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
+          </a>
+          <a href="/civil-litigation/" class="block bg-white p-3 md:p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+            <div class="text-xl md:text-2xl mb-2">💼</div>
+            <h3 class="font-semibold text-navy-900 mb-1 text-xs md:text-sm">Civil Litigation</h3>
+            <span class="text-gold-500 text-xs font-semibold hidden md:inline">Learn More →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <CTASection
+      title="Ready to Talk?"
+      subtitle="Tell Matt about your situation. Get honest, no-pressure advice about your options."
+    />
+  </main>
+</Layout>

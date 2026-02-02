@@ -1,0 +1,40 @@
+---
+interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props;
+
+const stats = [
+  { value: '$400K+', label: 'Won for Clients' },
+  { value: '50+', label: 'Jury Trials' },
+  { value: '24+', label: 'Years Experience' },
+  { value: '1000s', label: 'Families Helped' }
+];
+---
+
+<div class:list={[
+  "py-6 md:py-10",
+  dark ? "bg-navy-900" : "bg-offwhite"
+]}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+      {stats.map(stat => (
+        <div class="text-center">
+          <div class:list={[
+            "font-[family-name:var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-bold mb-0.5",
+            dark ? "text-gold-500" : "text-navy-900"
+          ]}>
+            {stat.value}
+          </div>
+          <div class:list={[
+            "text-xs md:text-sm font-medium uppercase tracking-wide",
+            dark ? "text-gray-300" : "text-text-gray"
+          ]}>
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

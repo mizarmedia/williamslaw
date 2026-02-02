@@ -1,0 +1,241 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Felony Defense Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Charged with a felony in Idaho? Former prosecutor Matt Williams has tried 50+ cases. Drug charges, theft, assault, white collar crimes. Free consultation.";
+
+const felonyTypes = [
+  {
+    title: 'Drug Crimes',
+    description: 'Possession, trafficking, manufacturing. Penalties depend on the substance and amount. Matt fights to reduce charges and explore alternatives to prison.'
+  },
+  {
+    title: 'Theft & Burglary',
+    description: 'Grand theft, burglary, robbery. Property crimes can carry long sentences. Matt examines the evidence and challenges how it was obtained.'
+  },
+  {
+    title: 'Assault & Battery',
+    description: 'Aggravated assault, battery with injury. Self-defense and intent matter. Matt investigates what really happened and builds your defense.'
+  },
+  {
+    title: 'White Collar Crimes',
+    description: 'Fraud, embezzlement, forgery. These cases often hinge on complex evidence. Matt digs into the details to find weaknesses in the prosecution\'s theory.'
+  },
+  {
+    title: 'Weapons Charges',
+    description: 'Illegal possession, concealed carry violations. Constitutional rights matter. Matt challenges illegal searches and improper procedures.'
+  },
+  {
+    title: 'Sex Crimes',
+    description: 'These charges carry severe penalties and lifelong consequences. Matt provides aggressive defense while treating all parties with respect.'
+  }
+];
+
+const faqs = [
+  {
+    question: "What makes a crime a felony instead of a misdemeanor?",
+    answer: "In Idaho, a <strong>felony</strong> is any crime that can be punished by more than 1 year in state prison. Misdemeanors are punishable by up to 1 year in county jail. The same act can sometimes be charged as either, depending on the circumstances - for example, the value of stolen property or whether someone was injured."
+  },
+  {
+    question: "Can a felony be reduced to a misdemeanor?",
+    answer: "Yes, in many cases. Idaho has \"wobbler\" offenses that can be charged as either a felony or misdemeanor. Even when charged as a felony, Matt can sometimes negotiate a reduction based on the evidence, your history, and other factors. This is a common goal in plea negotiations."
+  },
+  {
+    question: "Will I go to prison?",
+    answer: "Not necessarily. Many felonies can result in probation, especially for first-time offenders. Matt will review your specific situation and give you an honest assessment. He'll fight for alternatives to incarceration when possible - like probation, treatment programs, or community service."
+  },
+  {
+    question: "Can a felony be expunged from my record?",
+    answer: "Idaho allows some felonies to be expunged (erased from your record) after you complete your sentence and stay out of trouble for a period of time. The waiting period depends on the crime. Matt can advise you on expungement eligibility and help with the process when the time comes."
+  },
+  {
+    question: "What rights do I lose with a felony conviction?",
+    answer: "In Idaho, felony convictions can result in losing: the right to vote (while incarcerated), the right to own firearms, the ability to hold certain professional licenses, and the right to serve on a jury. Some rights can be restored after completing your sentence. These long-term consequences make fighting the charges so important."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Criminal Defense', href: '/criminal-defense/' },
+      { label: 'Felony Charges' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Facing Felony Charges?"
+      subtitle="Felony Defense"
+      description="A felony charge is serious. You need a lawyer who has tried serious cases and knows how to fight. Matt has 50+ trials and knows what it takes to win."
+    />
+
+    <!-- The Stakes -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            What's at Stake
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            A felony isn't just a legal problem - it can change your entire life. Prison time means losing years with your family. A felony record can mean losing your job, your home, your right to vote, and your ability to own a firearm.
+          </p>
+          <p>
+            The prosecution has unlimited resources: investigators, forensic labs, expert witnesses. They've already decided you're guilty. They're not looking for the truth - they're building a case.
+          </p>
+          <p>
+            You need someone in your corner who knows how to fight back. <strong>Someone who has been in the arena and knows how to win.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Felonies -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Types of Felonies Matt Defends
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Every case is different. Matt will review the specific facts of your situation.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+          {felonyTypes.map((type, index) => (
+            <div
+              class="bg-white p-3 md:p-5 rounded-lg shadow-sm border border-gray-100 fade-in"
+              style={`transition-delay: ${index * 50}ms`}
+            >
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">{type.title}</h3>
+              <p class="text-text-gray text-xs md:text-sm">{type.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How Matt Fights -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Matt Fights Felony Charges
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Investigate Everything</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Police rush to close cases. They miss things. Matt looks at every piece of evidence, interviews witnesses the police didn't talk to, and finds the facts that help your case.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Challenge the Evidence</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Was the search legal? Were your rights read? Was the evidence properly handled? Constitutional violations can get evidence thrown out. Matt knows what to look for because he used to be on the other side.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Negotiate from Strength</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                When the prosecution knows you're willing to go to trial, they negotiate differently. Matt's trial experience gives him leverage that other lawyers don't have.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Go to Trial When Necessary</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Some cases should go to trial. When that's the right move, Matt is ready. With 50+ trials under his belt, he knows how to present your case to a jury and fight for acquittal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Matt -->
+    <section class="py-8 md:py-16 bg-navy-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-3 gap-3 md:gap-6 text-center">
+          <div>
+            <div class="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-gold-500 mb-1">
+              50+
+            </div>
+            <div class="text-gray-300 text-xs md:text-sm">Jury Trials</div>
+          </div>
+          <div>
+            <div class="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-gold-500 mb-1">
+              9
+            </div>
+            <div class="text-gray-300 text-xs md:text-sm">Years as Prosecutor</div>
+          </div>
+          <div>
+            <div class="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-gold-500 mb-1">
+              24+
+            </div>
+            <div class="text-gray-300 text-xs md:text-sm">Years Experience</div>
+          </div>
+        </div>
+
+        <div class="mt-6 md:mt-10 text-center">
+          <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-4 md:mb-6">
+            When your freedom is on the line, you need a fighter. Matt has spent his career in the courtroom - first as a prosecutor, now as a defender. He knows how to win because he's done it.
+          </p>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center px-5 py-2.5 md:px-8 md:py-4 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm md:text-base rounded transition-colors"
+          >
+            Get a Free Case Review
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Felony Questions Answered
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="felony-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Facing Felony Charges? Don't Wait."
+      subtitle="The sooner you have a lawyer, the better your chances. Call for a free, confidential case review."
+    />
+  </main>
+</Layout>

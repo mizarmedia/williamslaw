@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../components/PracticeAreaHero.astro';
+import ResultCard from '../components/ResultCard.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = "Civil Litigation Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Employment disputes, civil rights violations, personal injury. Attorney Matt Williams fights for people against powerful opponents. $400K verdict. Free consultation.";
+
+const caseTypes = [
+  {
+    title: 'Employment Law',
+    description: 'Wrongful termination, discrimination, harassment, wage disputes. When your employer treats you unfairly, Matt fights back.',
+    icon: '💼'
+  },
+  {
+    title: 'Civil Rights',
+    description: 'Police misconduct, government overreach, constitutional violations. Your rights matter. Matt holds government accountable.',
+    icon: '⚖️'
+  },
+  {
+    title: 'Personal Injury',
+    description: 'Car accidents, slip and falls, product defects. When someone else\'s negligence hurts you, Matt gets you compensation.',
+    icon: '🏥'
+  },
+  {
+    title: 'Contract Disputes',
+    description: 'Business agreements, contractor issues, breach of contract. When someone breaks their word, Matt enforces your rights.',
+    icon: '📄'
+  },
+  {
+    title: 'Property Disputes',
+    description: 'Boundary issues, easements, landlord-tenant conflicts. Property rights can be complicated. Matt makes them clear.',
+    icon: '🏠'
+  },
+  {
+    title: 'Insurance Bad Faith',
+    description: 'When your insurance company won\'t pay a valid claim, that\'s bad faith. Matt knows how to make them pay.',
+    icon: '🛡️'
+  }
+];
+
+const results = [
+  {
+    amount: '$400,000',
+    type: 'Jury Verdict',
+    description: 'Federal jury verdict for wrongfully terminated McCall Police Chief.',
+    category: 'Wrongful Termination'
+  },
+  {
+    amount: 'Mid-Six Figures',
+    type: 'Settlement',
+    description: 'Settlement against Southwest Airlines for employment violations.',
+    category: 'Employment'
+  },
+  {
+    amount: 'Settlement',
+    type: 'Civil Rights',
+    description: 'Settlement against Middleton Police Department for civil rights violations.',
+    category: 'Civil Rights'
+  }
+];
+
+const faqs = [
+  {
+    question: "What's the difference between civil and criminal cases?",
+    answer: "In a <strong>criminal case</strong>, the government prosecutes someone for breaking the law. The punishment can be jail or fines. In a <strong>civil case</strong>, one person (or company) sues another for money damages or to make them do (or stop doing) something. Matt handles both - he's a former prosecutor who now does criminal defense AND civil litigation."
+  },
+  {
+    question: "How much does it cost to sue someone?",
+    answer: "It depends on the case. Some cases (like personal injury or employment) can be handled on contingency - Matt only gets paid if you win. Other cases require hourly billing or a flat fee. Matt will explain the options during your free consultation and help you understand the costs vs. potential recovery."
+  },
+  {
+    question: "How long do civil cases take?",
+    answer: "Simple cases might settle in a few months. Complex cases can take 1-2 years or more if they go to trial. Most cases settle before trial, but having a lawyer who's ready to try the case gives you leverage in negotiations. Matt won't drag things out unnecessarily, but he won't rush into a bad settlement either."
+  },
+  {
+    question: "What can I recover in a civil lawsuit?",
+    answer: "Depending on your case, you might recover: <strong>compensatory damages</strong> (money for your actual losses - medical bills, lost wages, property damage), <strong>pain and suffering</strong> (compensation for physical and emotional distress), and sometimes <strong>punitive damages</strong> (extra money to punish especially bad behavior). Attorney fees may also be recoverable in some cases."
+  },
+  {
+    question: "Should I try to settle or go to trial?",
+    answer: "It depends. Settlement is faster, cheaper, and guaranteed. Trial is risky - you might win big or get nothing. Matt's approach: prepare every case as if it's going to trial, but be open to fair settlement. When the other side knows you're willing to fight, they offer more to settle."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[{ label: 'Civil Litigation' }]} />
+
+    <PracticeAreaHero
+      title="Civil Litigation"
+      subtitle="Fighting for What's Right"
+      description="When you've been wronged by an employer, a company, or the government, you need a lawyer who's not afraid to fight. Matt takes on powerful opponents and wins."
+    />
+
+    <!-- The Problem -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            When Someone Wrongs You
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Maybe your employer fired you for blowing the whistle on illegal activity. Maybe the police violated your civil rights. Maybe a company's defective product injured you. Maybe someone simply refused to honor their contract.
+          </p>
+          <p>
+            The legal system is supposed to make things right. But big companies and government agencies have teams of lawyers. They count on regular people giving up because it's too hard or too expensive to fight.
+          </p>
+          <p>
+            Matt doesn't back down from powerful opponents. He's gone up against major corporations like Southwest Airlines and government entities like police departments. <strong>And he's won.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Types -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Types of Civil Cases
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Matt handles a wide range of civil disputes. If someone has wronged you, he can help.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+          {caseTypes.map((type, index) => (
+            <div
+              class="bg-white p-3 md:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow fade-in"
+              style={`transition-delay: ${index * 50}ms`}
+            >
+              <div class="text-xl md:text-2xl mb-2">{type.icon}</div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">{type.title}</h3>
+              <p class="text-text-gray text-xs md:text-sm">{type.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Civil Litigation Results
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Matt has taken on major corporations and government agencies - and won.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+          {results.map((result, index) => (
+            <div class="fade-in" style={`transition-delay: ${index * 100}ms`}>
+              <ResultCard
+                amount={result.amount}
+                type={result.type}
+                description={result.description}
+                category={result.category}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/results/" class="inline-flex items-center text-gold-500 hover:text-gold-400 font-semibold">
+            View All Results
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Civil Litigation Works
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Evaluate Your Case</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Matt reviews the facts and law to determine if you have a valid claim and what it might be worth.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Demand and Negotiate</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Before filing a lawsuit, Matt often sends a demand letter. Sometimes this leads to a quick settlement.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">File the Lawsuit</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                If negotiation fails, Matt files a complaint in court. The formal legal process begins.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Discovery</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Both sides exchange documents and gather evidence. Matt uncovers the facts that will win your case.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              5
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Settlement or Trial</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Most cases settle. If not, Matt is ready to present your case to a judge or jury.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Matt -->
+    <section class="py-8 md:py-16 bg-navy-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold mb-4">
+            Why Matt for Civil Litigation
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-6">
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 md:mb-2 text-sm md:text-base">Trial Experience</h3>
+            <p class="text-gray-300 text-xs md:text-sm">
+              50+ trials. Opponents take you seriously when they know you'll go to trial.
+            </p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 md:mb-2 text-sm md:text-base">Not Afraid of Big Opponents</h3>
+            <p class="text-gray-300 text-xs md:text-sm">
+              Matt has sued major corporations and government agencies. He's not intimidated.
+            </p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 md:mb-2 text-sm md:text-base">Contingency Options</h3>
+            <p class="text-gray-300 text-xs md:text-sm">
+              For many civil cases, you don't pay unless you win.
+            </p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 md:mb-2 text-sm md:text-base">Personal Attention</h3>
+            <p class="text-gray-300 text-xs md:text-sm">
+              Matt works directly with you. Your case gets the attention it deserves.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Civil Litigation Questions
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="civil-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Been Wronged? Fight Back."
+      subtitle="Tell Matt about your situation. Find out if you have a case and what it might be worth."
+    />
+  </main>
+</Layout>

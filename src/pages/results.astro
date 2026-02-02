@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import StatsBar from '../components/StatsBar.astro';
+import ResultCard from '../components/ResultCard.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = "Case Results | Williams Law | Eagle, Idaho Attorney";
+const description = "Real results for real people. See how attorney Matt Williams has helped Idaho clients win jury verdicts, settlements, and favorable outcomes.";
+
+const featuredResult = {
+  amount: '$400,000',
+  type: 'Federal Jury Verdict',
+  description: 'A police chief in McCall was fired unfairly. The city thought they could get away with it. Matt took the case to federal court, put the facts in front of a jury, and won. After a week-long trial, the jury awarded $400,000 in damages. This case proved that even powerful employers must follow the law.',
+  category: 'Wrongful Termination'
+};
+
+const results = [
+  {
+    amount: 'Settlement',
+    type: 'Civil Rights',
+    description: 'Police officers in Middleton harassed and violated a local family\'s civil rights. Matt took on the police department and secured a fair settlement for the family.',
+    category: 'Civil Rights'
+  },
+  {
+    amount: 'Mid-Six Figures',
+    type: 'Settlement',
+    description: 'A worker was treated unfairly by Southwest Airlines. Despite going up against a major corporation with unlimited legal resources, Matt secured significant compensation.',
+    category: 'Employment'
+  },
+  {
+    amount: 'Settlement',
+    type: 'Product Liability',
+    description: 'Someone was hurt by a medication made by Bayer Pharmaceuticals. Matt held the drug company accountable and got justice for his client.',
+    category: 'Product Liability'
+  },
+  {
+    amount: 'Charges Reduced',
+    type: 'Favorable Outcome',
+    description: 'Client faced serious DUI charges that could have meant jail time and losing their license. Matt found weaknesses in the prosecution\'s case and negotiated a reduction that protected their driving privileges.',
+    category: 'DUI Defense'
+  },
+  {
+    amount: 'Case Dismissed',
+    type: 'Charges Dropped',
+    description: 'Client was accused of a felony that would have destroyed their career. Matt investigated the evidence, found problems with how it was collected, and got the entire case thrown out.',
+    category: 'Criminal Defense'
+  },
+  {
+    amount: 'Full Custody',
+    type: 'Favorable Order',
+    description: 'A parent was fighting to keep their children safe from a dangerous situation. Matt presented the evidence effectively and the court awarded full custody.',
+    category: 'Child Custody'
+  },
+  {
+    amount: 'Fair Division',
+    type: 'Settlement',
+    description: 'During a contentious divorce, one spouse was trying to hide assets and take more than their fair share. Matt uncovered the deception and secured a fair property division.',
+    category: 'Divorce'
+  },
+  {
+    amount: 'Acquittal',
+    type: 'Not Guilty',
+    description: 'Client was charged with domestic violence based on false accusations. Matt proved the allegations were fabricated and secured a complete acquittal at trial.',
+    category: 'Domestic Violence'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[{ label: 'Case Results' }]} />
+
+    <!-- Hero -->
+    <section class="bg-navy-900 text-white py-10 md:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-[family-name:var(--font-display)] text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
+          Real Results for Real People
+        </h1>
+        <p class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          While other lawyers talk about experience, Matt shows you outcomes.
+        </p>
+      </div>
+    </section>
+
+    <StatsBar />
+
+    <!-- Featured Result -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-8">
+          <span class="inline-block px-3 py-0.5 bg-gold-500/10 text-gold-500 text-xs font-semibold uppercase tracking-wide rounded-full mb-2">
+            Featured Case
+          </span>
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900">
+            The Case That Made Headlines
+          </h2>
+        </div>
+
+        <ResultCard
+          amount={featuredResult.amount}
+          type={featuredResult.type}
+          description={featuredResult.description}
+          category={featuredResult.category}
+          featured={true}
+        />
+      </div>
+    </section>
+
+    <!-- All Results Grid -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            More Case Results
+          </h2>
+          <p class="text-sm md:text-base text-text-gray max-w-2xl mx-auto">
+            Every case is different, but the commitment is the same.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+          {results.map((result, index) => (
+            <div class="fade-in" style={`transition-delay: ${index * 50}ms`}>
+              <ResultCard
+                amount={result.amount}
+                type={result.type}
+                description={result.description}
+                category={result.category}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Results Matter -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-8">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Why No Other Boise Lawyer Shows You This
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Look at other law firm websites in Boise. You'll see fancy offices and lots of promises. But try to find actual case results. You won't.
+          </p>
+          <p>
+            Matt shows you his results because he's earned them. As a prosecutor for nearly a decade, he tried cases and learned how to win. Now he uses that same skill fighting for you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <div class="bg-offwhite border-t border-gray-200 py-6">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm text-text-gray/70 text-center">
+          <strong>Disclaimer:</strong> Every case is different. Past results do not guarantee similar outcomes in your case. The results shown depend on the specific facts and circumstances of each case. A free consultation can help you understand what might be possible in your situation.
+        </p>
+      </div>
+    </div>
+
+    <CTASection
+      title="Ready to Get Results?"
+      subtitle="Every successful case started with a conversation. Tell Matt about your situation and find out what's possible."
+    />
+  </main>
+</Layout>

@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "DUI Defense Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Charged with DUI in Idaho? Former prosecutor Matt Williams knows how to challenge breathalyzer tests, field sobriety, and police procedures. Free consultation.";
+
+const faqs = [
+  {
+    question: "Will I lose my license for a DUI?",
+    answer: "Not necessarily. Idaho has both criminal penalties and administrative license suspension. You have only <strong>7 days</strong> after your arrest to request a hearing to fight the license suspension. Matt can help you navigate both the criminal case and the DMV process to give you the best chance of keeping your license."
+  },
+  {
+    question: "Can I refuse a breathalyzer test?",
+    answer: "You can, but there are consequences. Idaho has an \"implied consent\" law - by driving on Idaho roads, you've already agreed to chemical testing. Refusing can result in automatic license suspension for 1 year (first offense) and can be used against you in court. However, refusing also means less evidence for the prosecution."
+  },
+  {
+    question: "What are the penalties for a first DUI in Idaho?",
+    answer: "A first DUI in Idaho is a misdemeanor. Penalties can include: up to 6 months in jail, fines up to $1,000, license suspension for 90-180 days, required alcohol evaluation, and possible ignition interlock device. But penalties depend on your specific situation - blood alcohol level, whether there was an accident, and other factors."
+  },
+  {
+    question: "Can a DUI be reduced to a lesser charge?",
+    answer: "Yes, in many cases. Depending on the strength of the evidence, Matt may be able to negotiate a reduction to reckless driving (\"wet reckless\") or inattentive driving. These carry lesser penalties and may not have the same long-term consequences as a DUI conviction."
+  },
+  {
+    question: "What if I was barely over the limit?",
+    answer: "This is actually good for your defense. Breathalyzers have a margin of error, typically around 0.01%. If you were at 0.08 or 0.09, that margin of error could put you under the legal limit. Matt will examine the maintenance records and calibration of the device to challenge borderline results."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Criminal Defense', href: '/criminal-defense/' },
+      { label: 'DUI Defense' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Charged with DUI?"
+      subtitle="DUI Defense"
+      description="Don't panic. A DUI charge doesn't have to ruin your life. Matt has been on both sides of these cases and knows how to fight them."
+    />
+
+    <!-- The Problem -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            What You're Facing
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Getting pulled over and charged with DUI is scary. You might lose your license. You could face jail time. Your insurance will go up. It can affect your job. The stigma alone is overwhelming.
+          </p>
+          <p>
+            But here's the thing: <strong>being charged doesn't mean you're guilty</strong>. The police and prosecutors make mistakes. Breathalyzers can be wrong. Field tests aren't always accurate. Traffic stops can be illegal.
+          </p>
+          <p>
+            The prosecution has to prove every element of their case. A skilled defense attorney finds the holes and makes them prove it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Matt Helps -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Matt Fights Your DUI
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Challenge the Traffic Stop</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Police need a valid reason to pull you over. If they didn't have reasonable suspicion, the entire stop could be illegal and everything after could be thrown out.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Examine the Breathalyzer</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Breathalyzer machines need regular calibration. Matt requests maintenance records. If the machine wasn't properly maintained, that result can be challenged.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Question Field Sobriety Tests</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Roadside tests are subjective and unreliable. Many sober people fail them due to nervousness or medical conditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Fight for the Best Outcome</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Sometimes that means dropped charges. Sometimes a plea deal that protects your license. Matt figures out what's best for YOUR situation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Matt for DUI -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+          <div>
+            <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-3 md:mb-4">
+              Why Matt for DUI Defense
+            </h2>
+            <p class="text-text-gray text-sm mb-4">
+              Matt knows both sides. He prosecuted DUI cases for nearly a decade. He knows what they're looking for - and what they're afraid of.
+            </p>
+            <ul class="space-y-2 md:space-y-3">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm">Former prosecutor who tried DUI cases</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm">Challenges breathalyzer evidence</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm">Track record of getting charges reduced</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm">Protects your driving privileges</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-navy-900 text-white p-4 md:p-6 rounded-lg">
+            <div class="text-gold-400 font-semibold uppercase tracking-wide text-xs mb-1">
+              Important Deadline
+            </div>
+            <h3 class="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold mb-2 md:mb-3">
+              You Have 7 Days
+            </h3>
+            <p class="text-gray-300 text-sm mb-4">
+              After a DUI arrest in Idaho, you have only 7 days to request a hearing to fight your license suspension.
+            </p>
+            <a
+              href="/contact/"
+              class="inline-block w-full text-center px-5 py-2.5 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm rounded transition-colors"
+            >
+              Contact Matt Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            DUI Questions Answered
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="dui-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Charged with DUI? Act Fast."
+      subtitle="Time is critical. Call now for a free case review and to protect your driving privileges."
+    />
+  </main>
+</Layout>

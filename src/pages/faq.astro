@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTASection from '../components/CTASection.astro';
+
+const title = "Frequently Asked Questions | Williams Law | Eagle, Idaho";
+const description = "Common questions about criminal defense, family law, and working with an attorney. Get answers from Eagle attorney Matt Williams.";
+
+const generalFaqs = [
+  {
+    question: "How much does a lawyer cost?",
+    answer: "It depends on your case. Matt offers several fee arrangements: <strong>Flat fees</strong> for straightforward matters (you know the cost upfront), <strong>hourly rates</strong> for complex cases (you pay for time spent), and <strong>contingency fees</strong> for some civil cases (you pay nothing unless you win). During your free consultation, Matt will explain which arrangement makes sense for your situation and give you a clear picture of costs."
+  },
+  {
+    question: "Do you offer payment plans?",
+    answer: "Yes. Matt understands that legal problems often come at the worst possible time financially. He'll work with you to find a payment arrangement that makes quality representation affordable. Don't let money concerns stop you from getting help - at least come in for the free consultation to understand your options."
+  },
+  {
+    question: "What happens during a free consultation?",
+    answer: "You'll meet with Matt (not a paralegal or intake person) to discuss your situation. He'll ask questions to understand the facts, explain the relevant law in plain English, outline your options, and give you an honest assessment of your case. There's no pressure and no obligation. Even if you don't hire Matt, you'll leave with a better understanding of your situation."
+  },
+  {
+    question: "How do I know if I need a lawyer?",
+    answer: "If you're asking this question, you probably do. Here are clear signs: you've been arrested or charged with a crime, you're going through a divorce or custody dispute, someone is suing you or you need to sue someone, you're signing an important contract, or the other side has a lawyer. A free consultation can help you decide."
+  },
+  {
+    question: "Will you handle my case personally?",
+    answer: "Yes. When you hire Matt, you work with Matt - not a junior associate or paralegal. He answers your calls, attends your hearings, and handles your case from start to finish. That's the advantage of working with a solo practitioner: your case gets personal attention from an experienced attorney."
+  },
+  {
+    question: "What areas do you serve?",
+    answer: "Matt's office is in Eagle, but he handles cases throughout the Treasure Valley and beyond: <strong>Ada County</strong> (Boise, Eagle, Meridian, Garden City, Kuna, Star), <strong>Canyon County</strong> (Nampa, Caldwell, Middleton), <strong>Valley County</strong> (McCall, Cascade, Donnelly), and other Idaho counties as needed."
+  }
+];
+
+const criminalFaqs = [
+  {
+    question: "What should I do if I get arrested?",
+    answer: "Stay calm. Be polite to the officers. <strong>Do not answer questions about what happened</strong> - you have the right to remain silent, and you should use it. Politely say: \"I want to speak with a lawyer before answering any questions.\" Don't resist arrest, even if you think it's unfair. Call Matt as soon as possible."
+  },
+  {
+    question: "Should I talk to the police?",
+    answer: "Generally, no. Police are trained to get you to say things that can be used against you. Even innocent explanations can be twisted. The only things you must provide are your name and ID. Beyond that, politely decline to answer questions until you have a lawyer present. This is your constitutional right - use it."
+  },
+  {
+    question: "Can I get my charges dropped?",
+    answer: "Maybe. It depends on your case. Common ways charges get dropped: the evidence was obtained illegally (bad search, no warrant), witnesses won't cooperate, the prosecution can't prove their case, or constitutional violations occurred. Matt will review your case and identify any weaknesses in the prosecution's case."
+  },
+  {
+    question: "What's the difference between a misdemeanor and a felony?",
+    answer: "A <strong>misdemeanor</strong> is a less serious crime, punishable by up to 1 year in county jail and fines. A <strong>felony</strong> is more serious, punishable by more than 1 year in state prison, larger fines, and long-term consequences like losing voting rights and firearm ownership. The same act can sometimes be charged either way depending on circumstances."
+  },
+  {
+    question: "Will I go to jail?",
+    answer: "It depends on your specific charges, your history, and the evidence. Many criminal cases - especially first offenses - result in probation rather than jail time. Matt will give you an honest assessment of what you're facing and fight for the best possible outcome."
+  }
+];
+
+const familyFaqs = [
+  {
+    question: "How does divorce work in Idaho?",
+    answer: "One spouse files a petition and serves it on the other. There's a 20-day waiting period. Then you either negotiate an agreement on property, custody, and support - or the court decides for you. Idaho is a \"no-fault\" state, meaning you don't have to prove wrongdoing to get divorced. Most divorces settle without trial."
+  },
+  {
+    question: "How is child custody decided?",
+    answer: "Courts decide based on the \"best interests of the child.\" They consider: each parent's relationship with the child, each parent's ability to provide a stable home, the child's adjustment to school and community, any history of domestic violence, and (for older children) the child's preferences. Matt helps you present evidence that supports your custody goals."
+  },
+  {
+    question: "Can I change a custody order?",
+    answer: "Yes, if circumstances have changed significantly. Courts can modify custody for: changes in work schedule, relocation, safety concerns, the child's changing needs as they grow, or repeated violations by the other parent. Matt can evaluate whether you have grounds for modification."
+  },
+  {
+    question: "How is child support calculated?",
+    answer: "Idaho uses a formula based on: both parents' income, number of children, custody time, healthcare costs, and childcare expenses. The Idaho Child Support Guidelines provide specific calculations. Matt can run the numbers for your situation."
+  },
+  {
+    question: "What if my ex won't follow the court order?",
+    answer: "You have options. Matt can file a motion for contempt, asking the court to enforce the order. Courts can: order makeup time, impose fines, garnish wages, suspend licenses, and in extreme cases, jail the violator. Document every violation - it matters."
+  }
+];
+
+const civilFaqs = [
+  {
+    question: "How much does it cost to sue someone?",
+    answer: "It varies. Some cases (personal injury, employment) can be handled on contingency - you pay nothing unless you win. Other cases require hourly billing or flat fees. Filing fees and court costs add up too. Matt will explain the economics of your specific case during your consultation."
+  },
+  {
+    question: "How long does a lawsuit take?",
+    answer: "Simple cases might settle in months. Complex cases can take 1-2+ years. Most cases settle before trial. The timeline depends on: how complicated the facts are, how cooperative the other side is, the court's schedule, and whether you go to trial. Matt works efficiently but won't rush into a bad settlement."
+  },
+  {
+    question: "What can I recover if I win?",
+    answer: "Depending on your case: <strong>compensatory damages</strong> (actual losses like medical bills and lost wages), <strong>pain and suffering</strong> (for physical and emotional distress), <strong>punitive damages</strong> (extra money to punish especially bad behavior), and sometimes attorney fees. Matt will help you understand what your case is worth."
+  },
+  {
+    question: "What if I'm being sued?",
+    answer: "Don't ignore it. You typically have 21 days to respond or you could lose by default. Contact Matt immediately. He'll review the claims, advise you on defenses, and either negotiate a resolution or defend you in court. The sooner you respond, the more options you have."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[{ label: 'FAQ' }]} />
+
+    <!-- Hero -->
+    <section class="bg-navy-900 text-white py-10 md:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold mb-3">
+          Frequently Asked Questions
+        </h1>
+        <p class="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto">
+          Common questions about working with Matt and navigating legal issues.
+        </p>
+      </div>
+    </section>
+
+    <!-- Jump Links -->
+    <section class="bg-offwhite border-b border-gray-200 py-3">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-2 md:gap-4 text-xs md:text-sm">
+          <a href="#general" class="text-navy-900 hover:text-gold-500 font-medium">General</a>
+          <span class="text-gray-300">|</span>
+          <a href="#criminal" class="text-navy-900 hover:text-gold-500 font-medium">Criminal</a>
+          <span class="text-gray-300">|</span>
+          <a href="#family" class="text-navy-900 hover:text-gold-500 font-medium">Family</a>
+          <span class="text-gray-300">|</span>
+          <a href="#civil" class="text-navy-900 hover:text-gold-500 font-medium">Civil</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- General FAQs -->
+    <section id="general" class="py-8 md:py-16 bg-white scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            General Questions
+          </h2>
+          <p class="text-text-gray text-sm">
+            About working with Matt and hiring an attorney
+          </p>
+        </div>
+
+        <FAQAccordion items={generalFaqs} id="general-faq" />
+      </div>
+    </section>
+
+    <!-- Criminal FAQs -->
+    <section id="criminal" class="py-8 md:py-16 bg-offwhite scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Criminal Defense
+          </h2>
+          <p class="text-text-gray text-sm">
+            Questions about arrests, charges, and the criminal process
+          </p>
+        </div>
+
+        <FAQAccordion items={criminalFaqs} id="criminal-faq" />
+
+        <div class="text-center mt-6">
+          <a href="/criminal-defense/" class="text-gold-500 hover:text-gold-400 font-semibold text-sm">
+            Learn more about criminal defense →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Family FAQs -->
+    <section id="family" class="py-8 md:py-16 bg-white scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Family Law
+          </h2>
+          <p class="text-text-gray text-sm">
+            Questions about divorce, custody, and child support
+          </p>
+        </div>
+
+        <FAQAccordion items={familyFaqs} id="family-faq" />
+
+        <div class="text-center mt-6">
+          <a href="/family-law/" class="text-gold-500 hover:text-gold-400 font-semibold text-sm">
+            Learn more about family law →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Civil FAQs -->
+    <section id="civil" class="py-8 md:py-16 bg-offwhite scroll-mt-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-2">
+            Civil Litigation
+          </h2>
+          <p class="text-text-gray text-sm">
+            Questions about lawsuits, settlements, and civil cases
+          </p>
+        </div>
+
+        <FAQAccordion items={civilFaqs} id="civil-faq" />
+
+        <div class="text-center mt-6">
+          <a href="/civil-litigation/" class="text-gold-500 hover:text-gold-400 font-semibold text-sm">
+            Learn more about civil litigation →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="py-8 bg-gold-500/10 border-t border-b border-gold-500/30">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="font-semibold text-navy-900 text-base mb-2">Still Have Questions?</h3>
+        <p class="text-text-gray text-sm mb-3">
+          The best way to get answers specific to your case is to talk with Matt directly.
+        </p>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center px-5 py-2.5 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm rounded transition-colors"
+        >
+          Schedule a Free Consultation
+        </a>
+      </div>
+    </section>
+
+    <CTASection
+      title="Your Question Not Here?"
+      subtitle="Every case is unique. Get personalized answers during a free, no-obligation consultation."
+    />
+  </main>
+</Layout>

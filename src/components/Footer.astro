@@ -2,17 +2,20 @@
 const currentYear = new Date().getFullYear();
 
 const practiceAreas = [
-  { label: 'Criminal Defense', href: '#practice-areas' },
-  { label: 'Family Law', href: '#practice-areas' },
-  { label: 'Civil Litigation', href: '#practice-areas' },
-  { label: 'DUI Defense', href: '#practice-areas' }
+  { label: 'Criminal Defense', href: '/criminal-defense/' },
+  { label: 'DUI Defense', href: '/criminal-defense/dui/' },
+  { label: 'Family Law', href: '/family-law/' },
+  { label: 'Divorce', href: '/family-law/divorce/' },
+  { label: 'Child Custody', href: '/family-law/custody/' },
+  { label: 'Civil Litigation', href: '/civil-litigation/' }
 ];
 
 const quickLinks = [
-  { label: 'About Matt', href: '#about' },
-  { label: 'Case Results', href: '#results' },
-  { label: 'Contact Us', href: '#contact' },
-  { label: 'Free Consultation', href: '#contact' }
+  { label: 'Home', href: '/' },
+  { label: 'About Matt', href: '/about/' },
+  { label: 'Case Results', href: '/results/' },
+  { label: 'FAQ', href: '/faq/' },
+  { label: 'Contact', href: '/contact/' }
 ];
 ---
 
@@ -22,7 +25,7 @@ const quickLinks = [
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Brand Column -->
       <div class="lg:col-span-1">
-        <a href="#home" class="inline-block mb-4">
+        <a href="/" class="inline-block mb-4">
           <span class="font-[family-name:var(--font-display)] text-2xl font-bold">
             Williams<span class="text-gold-400">Law</span>
           </span>

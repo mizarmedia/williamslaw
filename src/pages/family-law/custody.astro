@@ -1,0 +1,256 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Child Custody Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Fighting for custody in Idaho? Attorney Matt Williams helps parents protect their relationship with their children. Joint custody, sole custody, modifications. Free consultation.";
+
+const faqs = [
+  {
+    question: "What's the difference between legal and physical custody?",
+    answer: "<strong>Legal custody</strong> is the right to make major decisions about your child - education, healthcare, religion. <strong>Physical custody</strong> is where the child lives. You can have joint legal custody (both parents decide together) but primary physical custody (child lives mostly with one parent). Idaho courts often award joint legal custody but vary on physical custody."
+  },
+  {
+    question: "What does 'best interests of the child' mean?",
+    answer: "It's the standard Idaho courts use to make custody decisions. They look at: each parent's relationship with the child, the child's adjustment to home and school, each parent's mental and physical health, any history of domestic violence, and the child's wishes (if they're old enough). Matt helps you present evidence that shows why your proposed arrangement serves your child's best interests."
+  },
+  {
+    question: "Can I move away with my child?",
+    answer: "Not without permission if there's a custody order. Idaho requires you to get the other parent's agreement or court approval before relocating with your child. The court will consider how the move affects the child's relationship with the other parent. Matt can help you with relocation cases - whether you want to move or you're opposing a move."
+  },
+  {
+    question: "At what age can my child decide who to live with?",
+    answer: "There's no magic age. Idaho law says the court <strong>may</strong> consider the child's wishes if they're old enough and mature enough to form a reasonable preference. Judges typically give more weight to teenagers' preferences, but it's never the only factor. The child's best interests - not just their preference - controls the outcome."
+  },
+  {
+    question: "What if my ex violates the custody order?",
+    answer: "Document every violation. If your ex regularly ignores the custody schedule or makes unilateral decisions, Matt can file a motion for contempt. Courts take custody violations seriously. Repeated violations can result in fines, makeup time, and even changes to the custody arrangement."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Family Law', href: '/family-law/' },
+      { label: 'Child Custody' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Child Custody"
+      subtitle="Protecting Your Relationship"
+      description="Your relationship with your children is everything. Matt helps parents fight for custody arrangements that protect their kids and preserve that bond."
+    />
+
+    <!-- What Courts Consider -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            What Idaho Courts Look At
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Courts decide custody based on the "best interests of the child." Here's what that really means.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Parent-Child Relationship</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              How involved is each parent? Who helps with homework, attends activities, handles doctor visits? Courts want to see who's been actively parenting, not just present.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Stability</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Kids do better with stability. Courts look at each parent's living situation, work schedule, and ability to provide a stable home. Frequent moves or chaotic lifestyles can hurt your case.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Willingness to Co-Parent</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Courts favor parents who support the child's relationship with the other parent. Badmouthing, blocking communication, or alienating the child from the other parent looks very bad.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Safety Concerns</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              History of domestic violence, substance abuse, or neglect matters a lot. Courts prioritize the child's safety. If there are real concerns, Matt knows how to present evidence effectively.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Child's Adjustment</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              How is the child doing in their current school? Do they have friends? Are they thriving? Courts hesitate to disrupt a child who's doing well unless there's a good reason.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Child's Wishes</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              If the child is old enough (usually pre-teen or teen), the court may consider what they want. But it's not the only factor - judges won't let a child decide if the preference isn't in their best interest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Custody -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Types of Custody Arrangements
+          </h2>
+        </div>
+
+        <div class="space-y-3 md:space-y-4">
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Joint Physical Custody</h3>
+            <p class="text-text-gray text-xs md:text-sm mb-2">
+              Child spends significant time with both parents. Common arrangements: week on/week off, 2-2-3 schedule, or 3-4-4-3 schedule. Works best when parents live close and can communicate civilly.
+            </p>
+            <p class="text-text-gray/70 text-xs">
+              <strong>Best for:</strong> Parents who can work together and live in the same area.
+            </p>
+          </div>
+
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Primary Physical Custody</h3>
+            <p class="text-text-gray text-xs md:text-sm mb-2">
+              Child lives mainly with one parent; the other has regular visitation (often every other weekend plus one weeknight, plus holidays and summer time).
+            </p>
+            <p class="text-text-gray/70 text-xs">
+              <strong>Best for:</strong> When one parent has been the primary caregiver, or parents live far apart.
+            </p>
+          </div>
+
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Sole Custody</h3>
+            <p class="text-text-gray text-xs md:text-sm mb-2">
+              One parent has both physical and legal custody. The other may have supervised visitation or no contact. Courts order this when one parent poses a risk to the child.
+            </p>
+            <p class="text-text-gray/70 text-xs">
+              <strong>Best for:</strong> Situations involving abuse, neglect, or serious safety concerns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Matt Helps -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Matt Fights for You
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Build Your Case</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Matt helps you document your involvement in your child's life - school records, medical appointments, activities, daily routines. He'll identify witnesses who can speak to your parenting.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Address Concerns</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                If the other parent is raising issues about you (true or not), Matt develops a strategy to address them. If you have legitimate concerns about the other parent, he knows how to present that evidence effectively.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Negotiate When Possible</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Custody trials are brutal for everyone, especially kids. Matt pushes for settlement when it's in your child's best interest. But he won't accept a bad deal just to avoid court.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Fight in Court</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                When trial is necessary, Matt is ready. With 50+ trials under his belt, he knows how to present your case to a judge and fight for the custody arrangement your children deserve.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modifications -->
+    <section class="py-8 md:py-16 bg-navy-900 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold mb-4">
+            Need to Change an Existing Order?
+          </h2>
+          <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
+            Custody orders can be modified when circumstances change. Matt handles modifications for:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 text-sm md:text-base">Job or Schedule Changes</h3>
+            <p class="text-gray-300 text-xs md:text-sm">New job, different hours, or relocation can justify modifying custody.</p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 text-sm md:text-base">Child's Needs Changed</h3>
+            <p class="text-gray-300 text-xs md:text-sm">As kids grow, their needs change. What worked at age 5 might not work at 15.</p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 text-sm md:text-base">Safety Concerns</h3>
+            <p class="text-gray-300 text-xs md:text-sm">New evidence of abuse, neglect, or substance abuse can warrant emergency changes.</p>
+          </div>
+          <div class="bg-white/10 p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-white mb-1 text-sm md:text-base">Other Parent Violating Order</h3>
+            <p class="text-gray-300 text-xs md:text-sm">Repeated violations can be grounds for modifying the arrangement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Custody Questions Answered
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="custody-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Fighting for Custody?"
+      subtitle="Your relationship with your children is too important to leave to chance. Get experienced help."
+    />
+  </main>
+</Layout>

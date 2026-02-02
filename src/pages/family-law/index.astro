@@ -1,0 +1,233 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Family Law Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Divorce, child custody, child support in Idaho. Attorney Matt Williams helps families through difficult times with experience and compassion. Free consultation.";
+
+const services = [
+  {
+    title: 'Divorce',
+    href: '/family-law/divorce/',
+    description: 'Whether contested or uncontested, Matt helps you navigate the process and protect your interests while keeping costs down.',
+    icon: '📋'
+  },
+  {
+    title: 'Child Custody',
+    href: '/family-law/custody/',
+    description: 'Your children\'s wellbeing comes first. Matt fights for custody arrangements that protect them and preserve your relationship.',
+    icon: '👨‍👩‍👧‍👦'
+  },
+  {
+    title: 'Child Support',
+    href: '/family-law/child-support/',
+    description: 'Whether you\'re paying or receiving, Matt ensures support calculations are fair and follow Idaho guidelines.',
+    icon: '💰'
+  }
+];
+
+const faqs = [
+  {
+    question: "How long does divorce take in Idaho?",
+    answer: "At minimum, 20 days - that's the waiting period after filing. But most divorces take longer. An uncontested divorce where both sides agree on everything might take 2-3 months. A contested divorce with disputes about property, custody, or support can take 6 months to over a year. Matt works to resolve issues efficiently while protecting your interests."
+  },
+  {
+    question: "Do I have to go to court?",
+    answer: "Not always. Many family law matters can be resolved through negotiation or mediation. If you and your spouse can agree on the major issues, the court may just need to approve your agreement. But if the other side won't be reasonable, Matt is ready to fight for you in court."
+  },
+  {
+    question: "How is property divided in an Idaho divorce?",
+    answer: "Idaho is a <strong>community property</strong> state. That means most assets acquired during the marriage are split 50/50. But there are exceptions: inheritances, gifts, and property owned before marriage may be separate property. The devil is in the details, and Matt knows how to identify and protect what's rightfully yours."
+  },
+  {
+    question: "What if my spouse is hiding assets?",
+    answer: "This happens more often than you'd think. Matt knows how to find hidden assets through discovery, subpoenas, and forensic accounting. He's uncovered hidden bank accounts, underreported income, and assets transferred to family members. If your spouse is being dishonest, Matt will find out."
+  },
+  {
+    question: "Can I get alimony?",
+    answer: "Idaho calls it \"spousal maintenance\" and it's not automatic. Courts consider: how long you were married, your ability to support yourself, your spouse's ability to pay, and the standard of living during the marriage. Matt can evaluate whether you should seek maintenance or defend against an unfair request."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[{ label: 'Family Law' }]} />
+
+    <PracticeAreaHero
+      title="Family Law"
+      subtitle="Protecting What Matters Most"
+      description="Family legal matters are some of the most personal and stressful situations you'll face. Matt provides experienced guidance with the compassion these cases deserve."
+    />
+
+    <!-- The Approach -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Family Law Is Different
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Unlike criminal law, where there's a winner and a loser, family law is about finding a path forward. Even in contentious divorces, you might have to co-parent with your ex for years to come.
+          </p>
+          <p>
+            Matt's approach: <strong>Fight hard for what matters. Be reasonable about what doesn't.</strong> He won't escalate conflict just to run up legal bills. But when the other side is being unreasonable, he won't back down.
+          </p>
+          <p>
+            Most importantly, Matt keeps your children's wellbeing at the center of every decision. They didn't ask for this situation, and they deserve parents who can work together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Family Law Services
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Click below for detailed information about each area.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">
+          {services.map((service, index) => (
+            <a
+              href={service.href}
+              class="block bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold-500/30 transition-all duration-300 fade-in"
+              style={`transition-delay: ${index * 100}ms`}
+            >
+              <div class="text-2xl md:text-3xl mb-2 md:mb-3">{service.icon}</div>
+              <h3 class="font-[family-name:var(--font-display)] text-base md:text-lg font-bold text-navy-900 mb-1 md:mb-2">
+                {service.title}
+              </h3>
+              <p class="text-text-gray text-xs md:text-sm leading-relaxed mb-2">
+                {service.description}
+              </p>
+              <span class="text-gold-500 font-semibold text-xs md:text-sm">
+                Learn More →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Services -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Other Family Law Matters
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Custody Modifications</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Life changes. If your current custody order isn't working, Matt can help you petition for a modification.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Paternity</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Establishing paternity gives fathers rights to custody and visitation. Matt handles both voluntary and disputed cases.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Protective Orders</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Need protection from abuse? Matt can help you get a protective order - or defend against an unfair one.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 md:mb-2 text-sm md:text-base">Enforcement Actions</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              If your ex isn't following court orders, Matt can file contempt actions to enforce them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Matt -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+          <div>
+            <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+              Why Matt for Family Law
+            </h2>
+            <ul class="space-y-2 md:space-y-3">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm"><strong>50+ trials</strong> - knows how to present your case</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm"><strong>Criminal background</strong> - useful for DV/protective orders</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm"><strong>Local relationships</strong> - knows the judges</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-text-gray text-xs md:text-sm"><strong>Personal attention</strong> - works directly with you</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-navy-900 text-white p-4 md:p-6 rounded-lg">
+            <h3 class="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold mb-2 md:mb-3">
+              Free Consultation
+            </h3>
+            <p class="text-gray-300 text-sm mb-4">
+              Every family situation is unique. Get honest advice about your options - no pressure.
+            </p>
+            <a
+              href="/contact/"
+              class="inline-block w-full text-center px-5 py-2.5 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold text-sm rounded transition-colors"
+            >
+              Schedule Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Common Questions
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="family-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Going Through a Family Matter?"
+      subtitle="You don't have to face this alone. Get experienced help and honest advice about your situation."
+    />
+  </main>
+</Layout>

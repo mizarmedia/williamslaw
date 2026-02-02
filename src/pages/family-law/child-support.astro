@@ -1,0 +1,271 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Child Support Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Child support questions in Idaho? Attorney Matt Williams helps with support calculations, modifications, and enforcement. Whether paying or receiving. Free consultation.";
+
+const faqs = [
+  {
+    question: "How is child support calculated in Idaho?",
+    answer: "Idaho uses a formula based on: both parents' income, how many children you have, how much time each parent has custody, and costs for health insurance and childcare. The Idaho Child Support Guidelines provide a specific calculation. Matt can run the numbers for your situation and explain what to expect."
+  },
+  {
+    question: "Can child support be changed?",
+    answer: "Yes, if circumstances have changed significantly. Common reasons include: job loss or big income change, significant change in custody time, child's needs have changed (like medical issues), or it's been more than 5 years since the last order. Matt can evaluate whether you qualify for a modification."
+  },
+  {
+    question: "What if my ex doesn't pay?",
+    answer: "You have options. Idaho can: garnish wages directly, seize tax refunds, suspend driver's or professional licenses, report to credit bureaus, and in extreme cases, hold the non-payer in contempt (which can mean jail). Matt can help you pursue enforcement through the court."
+  },
+  {
+    question: "Can support be higher or lower than the guidelines?",
+    answer: "Yes, but you need a good reason. Courts can deviate from the guidelines for things like: extraordinary medical expenses, special educational needs, income substantially higher than the table covers, or other factors that would make the guideline amount unfair. Matt knows when deviation is possible and how to argue for it."
+  },
+  {
+    question: "Does child support cover college?",
+    answer: "Not automatically. Idaho child support typically ends at 18 (or 19 if still in high school). Courts can't order parents to pay for college. However, parents can agree to college support in their divorce agreement. If that's important to you, Matt can help negotiate it into your settlement."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Family Law', href: '/family-law/' },
+      { label: 'Child Support' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Child Support"
+      subtitle="Supporting Your Children"
+      description="Whether you're paying or receiving, Matt makes sure child support calculations are fair and follow Idaho guidelines."
+    />
+
+    <!-- How It Works -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Child Support Works in Idaho
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Idaho uses a formula to calculate child support. It's not up to the judge's whim - there are specific guidelines that courts must follow. The formula considers:
+          </p>
+          <ul>
+            <li><strong>Both parents' income</strong> - gross income from all sources</li>
+            <li><strong>Number of children</strong> - more kids = more support</li>
+            <li><strong>Custody time</strong> - the more time you have, the less you pay (or receive)</li>
+            <li><strong>Healthcare costs</strong> - who pays for the kids' insurance</li>
+            <li><strong>Childcare costs</strong> - work-related daycare expenses</li>
+          </ul>
+          <p>
+            The goal is to make sure kids have the same standard of living they'd have if their parents were still together. Neither parent should bear an unfair burden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Formula -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            The Idaho Child Support Guidelines
+          </h2>
+        </div>
+
+        <div class="bg-white p-4 md:p-6 rounded-lg border border-gray-200">
+          <div class="space-y-3 md:space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500/20 text-gold-500 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
+                1
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base">Calculate Combined Income</h3>
+                <p class="text-text-gray text-xs md:text-sm">Add both parents' gross monthly income together.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500/20 text-gold-500 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
+                2
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base">Look Up the Basic Obligation</h3>
+                <p class="text-text-gray text-xs md:text-sm">The guidelines table shows the basic support amount for your income level and number of kids.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500/20 text-gold-500 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
+                3
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base">Calculate Each Parent's Share</h3>
+                <p class="text-text-gray text-xs md:text-sm">Each parent pays a percentage based on their share of the combined income.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500/20 text-gold-500 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
+                4
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base">Adjust for Custody Time</h3>
+                <p class="text-text-gray text-xs md:text-sm">If you have significant custody time (typically 25%+), the amount is reduced.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500/20 text-gold-500 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
+                5
+              </div>
+              <div>
+                <h3 class="font-semibold text-navy-900 text-sm md:text-base">Add Extras</h3>
+                <p class="text-text-gray text-xs md:text-sm">Healthcare premiums and childcare costs are split proportionally and added.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-text-gray/70 mt-4 text-xs md:text-sm">
+          Matt can run the actual calculations for your situation during your consultation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Issues -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Common Child Support Issues
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Hidden Income</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Some people try to hide income - working for cash, underreporting self-employment income, or having a new spouse "pay for everything." Matt knows how to investigate and uncover hidden income.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Voluntary Unemployment</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Can't quit your job to avoid support. Courts can "impute" income - calculate support based on what you could earn, not what you're choosing to earn. This works both ways.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Modifications</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Lost your job? Got a raise? Custody changed? Support can be modified when circumstances change. Matt handles both increasing and decreasing support amounts.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Enforcement</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              If your ex won't pay, you have options: wage garnishment, tax refund seizure, license suspension, and contempt. Matt can pursue all available remedies to get you what you're owed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two Perspectives -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-white p-4 md:p-6 rounded-lg border border-gray-200">
+            <h3 class="font-[family-name:var(--font-display)] text-lg md:text-xl font-bold text-navy-900 mb-2 md:mb-3">
+              If You're Receiving Support
+            </h3>
+            <ul class="space-y-2 text-text-gray text-xs md:text-sm">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Ensure all income is counted (bonuses, side jobs, benefits)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Include healthcare and childcare costs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Get enforcement help if payments stop</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Seek increases when income goes up</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-4 md:p-6 rounded-lg border border-gray-200">
+            <h3 class="font-[family-name:var(--font-display)] text-lg md:text-xl font-bold text-navy-900 mb-2 md:mb-3">
+              If You're Paying Support
+            </h3>
+            <ul class="space-y-2 text-text-gray text-xs md:text-sm">
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Ensure your ex's income is properly counted too</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Get credit for your custody time</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Seek reductions when circumstances change</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Fight against unfair deviations</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Child Support Questions
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="support-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Child Support Questions?"
+      subtitle="Get accurate calculations and honest advice about your situation. Free consultation."
+    />
+  </main>
+</Layout>

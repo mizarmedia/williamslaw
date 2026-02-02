@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Divorce Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Getting divorced in Idaho? Attorney Matt Williams helps you protect your assets, your children, and your future. Contested or uncontested divorce. Free consultation.";
+
+const faqs = [
+  {
+    question: "What's the difference between contested and uncontested divorce?",
+    answer: "An <strong>uncontested divorce</strong> is when you and your spouse agree on everything - property division, custody, support. It's faster, cheaper, and less stressful. A <strong>contested divorce</strong> is when you can't agree and need the court to decide. Matt can help with either, but always tries to reach agreement first when possible."
+  },
+  {
+    question: "How is property divided?",
+    answer: "Idaho is a <strong>community property</strong> state. Assets acquired during marriage are generally split 50/50. But separate property (what you owned before marriage, inheritances, gifts) stays yours. The tricky part is figuring out what's community vs. separate, especially when accounts have been mixed. Matt knows how to trace and protect your property."
+  },
+  {
+    question: "Can I keep the house?",
+    answer: "Maybe. The house is usually the biggest asset, and both spouses often want it. Options include: one person buys out the other's share, sell the house and split the proceeds, or continue co-owning temporarily (less common). Matt will help you figure out what's financially smart for your situation."
+  },
+  {
+    question: "What about retirement accounts and pensions?",
+    answer: "Retirement accounts earned during marriage are community property and can be divided. This requires a special court order called a QDRO (Qualified Domestic Relations Order). It's one of the most commonly mishandled parts of divorce. Matt makes sure these valuable assets are properly addressed."
+  },
+  {
+    question: "How do I protect myself financially during divorce?",
+    answer: "First, gather documentation - bank statements, tax returns, retirement account statements, property records. Make copies before anything can \"disappear.\" Don't hide assets (courts punish this). Don't make major financial changes. And get a lawyer early - the decisions made at the start of divorce often shape the outcome."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Family Law', href: '/family-law/' },
+      { label: 'Divorce' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Getting Divorced?"
+      subtitle="Divorce"
+      description="Divorce is never easy, but it doesn't have to be a war. Matt helps you protect what matters while keeping conflict - and costs - under control."
+    />
+
+    <!-- The Process -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Idaho Divorce Works
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Filing the Petition</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                One spouse files a petition for divorce and serves it on the other. Idaho requires at least one spouse to have lived in Idaho for 6 weeks before filing. No specific grounds are required - Idaho allows "irreconcilable differences" (no-fault divorce).
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Waiting Period</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Idaho has a mandatory 20-day waiting period after filing. This is meant to give people time to reconsider. During this time, both sides gather financial documents and prepare their positions.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Negotiation or Litigation</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Most divorces settle through negotiation. Matt tries to reach fair agreements on property, custody, and support without going to court. If the other side won't be reasonable, he's prepared to litigate.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Final Decree</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                The divorce is final when the judge signs the decree. This document spells out the property division, custody arrangement, and support obligations. Getting it right matters - it's hard to change later.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Gets Divided -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            What Gets Divided
+          </h2>
+          <p class="text-lg text-text-gray max-w-2xl mx-auto">
+            Idaho community property law means most marital assets are split 50/50. But the details matter.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Community Property (Split)</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• Income earned during marriage</li>
+              <li>• House purchased during marriage</li>
+              <li>• Retirement contributions during marriage</li>
+              <li>• Vehicles bought during marriage</li>
+              <li>• Debts incurred during marriage</li>
+            </ul>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Separate Property (Yours)</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• What you owned before marriage</li>
+              <li>• Inheritances (even during marriage)</li>
+              <li>• Gifts to you specifically</li>
+              <li>• Personal injury settlements (usually)</li>
+              <li>• Property kept separate and not mixed</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-4 md:mt-6 bg-gold-500/10 p-4 md:p-5 rounded-lg border border-gold-500/30">
+          <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Watch Out: "Commingling"</h3>
+          <p class="text-text-gray text-xs md:text-sm">
+            If you mix separate property with community property, it can become community property. Example: You had $50,000 in savings before marriage, but deposited your paychecks into the same account for 10 years. Now it may all be community property. Matt knows how to trace funds and protect separate property.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Matt's Approach -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Matt's Approach to Divorce
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Settlement First</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Litigation is expensive and stressful. Matt always tries to negotiate a fair settlement first. If you can resolve issues without a trial, you'll save money and emotional energy.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Ready to Fight</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              But some spouses won't be reasonable. When settlement isn't possible, Matt is prepared to go to court and fight for what you deserve. His trial experience matters when negotiation fails.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Protect the Kids</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Children suffer most in contentious divorces. Matt keeps their interests central and encourages co-parenting solutions that minimize conflict. But he'll fight hard if the other parent is a danger.
+            </p>
+          </div>
+          <div class="bg-offwhite p-3 md:p-5 rounded-lg">
+            <h3 class="font-semibold text-navy-900 mb-1 text-sm md:text-base">Watch the Money</h3>
+            <p class="text-text-gray text-xs md:text-sm">
+              Some lawyers run up bills by fighting over everything. Matt focuses on what matters and doesn't waste your money on battles that don't make a difference. Efficient representation saves you money.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Divorce Questions Answered
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="divorce-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Considering Divorce?"
+      subtitle="Get honest advice about your situation. A free consultation helps you understand your options."
+    />
+  </main>
+</Layout>

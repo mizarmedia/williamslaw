@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PracticeAreaHero from '../../components/PracticeAreaHero.astro';
+import FAQAccordion from '../../components/FAQAccordion.astro';
+import CTASection from '../../components/CTASection.astro';
+
+const title = "Domestic Violence Defense Attorney | Eagle & Boise, Idaho | Williams Law";
+const description = "Charged with domestic violence in Idaho? False accusations happen. Attorney Matt Williams provides aggressive defense while treating everyone fairly. Free consultation.";
+
+const faqs = [
+  {
+    question: "What counts as domestic violence in Idaho?",
+    answer: "Idaho law defines domestic violence broadly. It includes physical harm, threats, or harassment between: spouses or ex-spouses, people who live together or used to, people who have a child together, or people in a dating relationship. It doesn't require serious injury - even pushing or grabbing can lead to charges."
+  },
+  {
+    question: "Can the accuser drop the charges?",
+    answer: "No. Once the police are called, the decision to press charges is up to the prosecutor, not the accuser. Many people are surprised to learn that even if the accuser wants to drop it, the state can (and often does) proceed anyway. This is why having a skilled defense attorney matters so much."
+  },
+  {
+    question: "What if the accusations are false?",
+    answer: "False accusations happen more often than people think, especially during contentious divorces or custody battles. Matt will investigate the accuser's motives, look for inconsistencies in their story, and gather evidence that shows the truth. He's seen these tactics before and knows how to expose them."
+  },
+  {
+    question: "Will I be able to go home?",
+    answer: "Usually not immediately. Judges routinely issue no-contact orders after domestic violence arrests. This can mean you can't go home, can't see your children, and can't communicate with your spouse. Matt can file motions to modify these orders once he understands your situation."
+  },
+  {
+    question: "How will this affect my custody case?",
+    answer: "Domestic violence allegations can seriously hurt you in family court. Judges are required to consider domestic violence when making custody decisions. This is another reason why fighting the charges - or at least getting them reduced - is so important. Matt handles both criminal and family law cases, so he understands how they intersect."
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Criminal Defense', href: '/criminal-defense/' },
+      { label: 'Domestic Violence' }
+    ]} />
+
+    <PracticeAreaHero
+      title="Domestic Violence Charges"
+      subtitle="DV Defense"
+      description="DV charges can destroy relationships, careers, and families. Matt provides aggressive defense while treating everyone involved fairly and respectfully."
+    />
+
+    <!-- The Problem -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            What You're Facing
+          </h2>
+        </div>
+
+        <div class="prose prose-sm md:prose-base mx-auto text-text-gray">
+          <p>
+            Domestic violence charges are different from other crimes. The moment police arrive, they're trained to make an arrest. Someone is going to jail that night - whether anything actually happened or not.
+          </p>
+          <p>
+            Once charged, you're immediately separated from your home and family. A no-contact order means you can't talk to your spouse or see your kids. Your name might be in the news. Employers find out. Friends take sides.
+          </p>
+          <p>
+            And here's what makes it worse: <strong>false accusations happen</strong>. In heated divorces, custody battles, or arguments that get out of hand, people sometimes say things that aren't true. The police don't sort that out - they just arrest.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consequences -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Consequences of a DV Conviction
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 md:gap-5">
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Criminal Penalties</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• Up to 1 year jail (misdemeanor) or years in prison (felony)</li>
+              <li>• Fines up to $1,000 or more</li>
+              <li>• Mandatory anger management classes</li>
+              <li>• Probation with strict conditions</li>
+            </ul>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Federal Consequences</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• <strong>Lifetime ban on owning firearms</strong> (federal law)</li>
+              <li>• Cannot possess ammunition</li>
+              <li>• Applies even to misdemeanor DV convictions</li>
+              <li>• This is permanent - no exceptions</li>
+            </ul>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Family Consequences</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• Custody battles become much harder to win</li>
+              <li>• Courts view you as a risk to children</li>
+              <li>• May lose custody or visitation rights</li>
+              <li>• No-contact orders can last for years</li>
+            </ul>
+          </div>
+          <div class="bg-white p-3 md:p-5 rounded-lg border border-gray-100">
+            <h3 class="font-semibold text-navy-900 mb-2 text-sm md:text-base">Career Consequences</h3>
+            <ul class="space-y-1 text-text-gray text-xs md:text-sm">
+              <li>• Shows up on background checks</li>
+              <li>• Can't work in law enforcement, military, security</li>
+              <li>• Many employers won't hire with DV conviction</li>
+              <li>• May lose professional licenses</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Matt Helps -->
+    <section class="py-8 md:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            How Matt Defends DV Cases
+          </h2>
+        </div>
+
+        <div class="space-y-4 md:space-y-6">
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              1
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Investigate the Accuser's Story</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Matt looks for inconsistencies, conflicting statements, and motives. Is there a divorce or custody battle happening? Has this person made accusations before? Do their statements to police match what they told friends or family?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              2
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Gather Exculpatory Evidence</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Text messages, voicemails, social media posts, emails - often the accuser's own words show a different story than what they told police. Matt collects this evidence before it disappears.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              3
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Challenge the Police Investigation</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Did police interview all witnesses? Did they photograph the scene? Did they get both sides of the story? Often, police rush to arrest without doing a thorough investigation. Matt exposes these gaps.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3 md:gap-5">
+            <div class="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 bg-gold-500 text-navy-900 rounded-full flex items-center justify-center font-bold text-sm md:text-lg">
+              4
+            </div>
+            <div>
+              <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-1">Build Self-Defense Claims</h3>
+              <p class="text-text-gray text-xs md:text-sm">
+                Sometimes the accused was actually the victim. If you were defending yourself, Matt builds that case with evidence and witnesses. Self-defense is a complete defense to domestic violence charges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important Note -->
+    <section class="py-6 md:py-10 bg-gold-500/10 border-t border-b border-gold-500/30">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="font-semibold text-navy-900 text-sm md:text-base mb-2">A Note About These Cases</h3>
+        <p class="text-text-gray text-xs md:text-sm">
+          Matt approaches DV cases with care and professionalism. He provides vigorous defense for his clients while treating accusers and witnesses with respect. His goal is to find the truth and ensure justice - whatever that looks like in your specific situation.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 md:py-16 bg-offwhite">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-6 md:mb-10">
+          <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl font-bold text-navy-900 mb-4">
+            Domestic Violence Questions
+          </h2>
+        </div>
+
+        <FAQAccordion items={faqs} id="dv-faq" />
+      </div>
+    </section>
+
+    <CTASection
+      title="Facing DV Charges?"
+      subtitle="These cases move fast. Get experienced help before you make a statement or agree to anything."
+    />
+  </main>
+</Layout>

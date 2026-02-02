@@ -1,12 +1,18 @@
 ---
+import HeaderExpanded from '../components/HeaderExpanded.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
   description: string;
+  canonical?: string;
+  schema?: object;
 }
 
-const { title, description } = Astro.props;
+const { title, description, canonical, schema: customSchema } = Astro.props;
+const currentPath = Astro.url.pathname;
 
-const schema = {
+const baseSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -30,9 +36,12 @@ const schema = {
       "areaServed": [
         { "@type": "City", "name": "Eagle", "addressRegion": "ID" },
         { "@type": "City", "name": "Boise", "addressRegion": "ID" },
-        { "@type": "City", "name": "Meridian", "addressRegion": "ID" }
+        { "@type": "City", "name": "Meridian", "addressRegion": "ID" },
+        { "@type": "City", "name": "Nampa", "addressRegion": "ID" },
+        { "@type": "City", "name": "Caldwell", "addressRegion": "ID" },
+        { "@type": "City", "name": "McCall", "addressRegion": "ID" }
       ],
-      "knowsAbout": ["Criminal Defense", "Family Law", "Civil Litigation", "DUI Defense"],
+      "knowsAbout": ["Criminal Defense", "Family Law", "Civil Litigation", "DUI Defense", "Divorce", "Child Custody"],
       "alumniOf": {
         "@type": "EducationalOrganization",
         "name": "University of Idaho College of Law"
@@ -82,7 +91,10 @@ const schema = {
         "name": "Legal Services",
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criminal Defense" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DUI Defense" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Law" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Divorce" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Child Custody" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Civil Litigation" } }
         ]
       }
@@ -104,6 +116,10 @@ const schema = {
     }
   ]
 };
+
+// Merge custom schema if provided
+const schema = customSchema ? { ...baseSchema, "@graph": [...baseSchema["@graph"], customSchema] } : baseSchema;
+const canonicalUrl = canonical || `https://mattwilliams.law${currentPath}`;
 ---
 
 <!doctype html>
@@ -117,20 +133,21 @@ const schema = {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mattwilliams.law/" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://mattwilliams.law/images/matt-williams.jpg" />
+    <meta property="og:image" content="https://mattwilliams.law/images/og-image.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://mattwilliams.law/" />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="https://mattwilliams.law/images/matt-williams.jpg" />
+    <meta property="twitter:image" content="https://mattwilliams.law/images/og-image.jpg" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -144,7 +161,11 @@ const schema = {
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body class="bg-white antialiased">
+    <HeaderExpanded currentPath={currentPath} />
+
     <slot />
+
+    <Footer />
 
     <!-- Scroll animation script -->
     <script>

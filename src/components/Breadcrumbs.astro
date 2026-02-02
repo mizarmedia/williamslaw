@@ -1,0 +1,38 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="bg-offwhite border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <ol class="flex items-center flex-wrap gap-2 text-sm">
+      <li>
+        <a href="/" class="text-text-gray hover:text-gold-500 transition-colors">
+          Home
+        </a>
+      </li>
+      {items.map((item, index) => (
+        <li class="flex items-center gap-2">
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          {item.href ? (
+            <a href={item.href} class="text-text-gray hover:text-gold-500 transition-colors">
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-navy-900 font-medium">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>

@@ -2,6 +2,7 @@
 const practiceAreas = [
   {
     title: 'Criminal Defense',
+    href: '/criminal-defense/',
     description: 'DUI/DWI, felonies, misdemeanors, domestic violence, drug charges, assault, theft, and traffic violations.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
@@ -9,6 +10,7 @@ const practiceAreas = [
   },
   {
     title: 'Family Law',
+    href: '/family-law/',
     description: 'Divorce, child custody, child support, spousal support, adoption, guardianship, and prenuptial agreements.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -16,6 +18,7 @@ const practiceAreas = [
   },
   {
     title: 'Civil Litigation',
+    href: '/civil-litigation/',
     description: 'Contract disputes, HOA issues, civil rights violations, wrongful termination, personal injury, and property disputes.',
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -24,45 +27,46 @@ const practiceAreas = [
 ];
 ---
 
-<section id="practice-areas" class="py-20 md:py-28 bg-white">
+<section id="practice-areas" class="py-8 md:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center mb-16 fade-in">
-      <h2 class="font-[family-name:var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+    <div class="text-center mb-6 md:mb-12 fade-in">
+      <h2 class="font-[family-name:var(--font-display)] text-xl md:text-3xl lg:text-4xl font-bold text-navy-900 mb-2">
         Practice Areas
       </h2>
-      <p class="text-lg text-text-gray max-w-2xl mx-auto">
+      <p class="text-sm md:text-base text-text-gray max-w-2xl mx-auto">
         Comprehensive legal representation for your most challenging situations.
       </p>
     </div>
 
     <!-- Practice Area Cards -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">
       {practiceAreas.map((area, index) => (
-        <div
-          class="group relative p-8 bg-offwhite rounded-lg border border-gray-100 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 fade-in"
+        <a
+          href={area.href}
+          class="group relative p-4 md:p-6 bg-offwhite rounded-lg border border-gray-100 hover:border-gold-500/50 hover:shadow-lg transition-all duration-300 fade-in block"
           style={`transition-delay: ${index * 100}ms`}
         >
           <!-- Icon -->
-          <div class="w-14 h-14 flex items-center justify-center bg-navy-900 text-gold-500 rounded-lg mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+          <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-navy-900 text-gold-500 rounded-lg mb-3 md:mb-4 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
             <Fragment set:html={area.icon} />
           </div>
 
           <!-- Content -->
-          <h3 class="font-[family-name:var(--font-heading)] text-xl font-bold text-navy-900 mb-3">
+          <h3 class="font-[family-name:var(--font-heading)] text-base md:text-lg font-bold text-navy-900 mb-1 md:mb-2">
             {area.title}
           </h3>
-          <p class="text-text-gray leading-relaxed">
+          <p class="text-text-gray text-xs md:text-sm leading-relaxed">
             {area.description}
           </p>
 
           <!-- Hover Arrow -->
-          <div class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-            <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+            <svg class="w-4 h-4 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>
