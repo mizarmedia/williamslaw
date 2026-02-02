@@ -34,14 +34,20 @@ body {
   line-height: 1.6;
 }
 
-/* Fade-in animation for scroll - opacity only to prevent layout shift */
+/* Fade-in animation for scroll - subtle scale + blur for smooth reveal */
 .fade-in {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transform: scale(0.97);
+  filter: blur(4px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.visible {
   opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
 }
 
 /* Gold underline accent */
@@ -66,22 +72,26 @@ body {
   background-repeat: repeat;
 }
 
-/* Hero entrance animations - fade only, no translateY to avoid scroll-like effect */
+/* Hero entrance animations - subtle scale + blur for smooth reveal */
 .hero-animate {
   opacity: 0;
-  animation: heroFadeIn 0.6s ease-out forwards;
+  transform: scale(0.97);
+  filter: blur(4px);
+  animation: heroFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .hero-animate.delay-1 { animation-delay: 0.1s; }
 .hero-animate.delay-2 { animation-delay: 0.2s; }
-.hero-animate.delay-3 { animation-delay: 0.3s; }
-.hero-animate.delay-4 { animation-delay: 0.4s; }
-.hero-animate.delay-5 { animation-delay: 0.5s; }
-.hero-animate.delay-6 { animation-delay: 0.6s; }
+.hero-animate.delay-3 { animation-delay: 0.35s; }
+.hero-animate.delay-4 { animation-delay: 0.5s; }
+.hero-animate.delay-5 { animation-delay: 0.7s; }
+.hero-animate.delay-6 { animation-delay: 0.85s; }
 
 @keyframes heroFadeIn {
   to {
     opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
   }
 }
 
@@ -92,6 +102,8 @@ body {
 .stagger-4 { transition-delay: 0.4s; }
 .stagger-5 { transition-delay: 0.5s; }
 .stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
 
 /* Counter animation */
 .count-up {
@@ -155,8 +167,11 @@ body {
   .hero-animate {
     opacity: 1;
     transform: none;
+    filter: none;
   }
   .fade-in {
     opacity: 1;
+    transform: none;
+    filter: none;
   }
 }
