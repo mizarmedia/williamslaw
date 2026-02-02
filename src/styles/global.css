@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Williams Law Custom Theme */
+@theme {
+  /* Navy - Trust & Authority */
+  --color-navy-900: #1a365d;
+  --color-navy-800: #1e4175;
+  --color-navy-700: #2d4a6f;
+  --color-navy-600: #3a5a80;
+
+  /* Gold - Premium & Approachable */
+  --color-gold-500: #c9a227;
+  --color-gold-400: #d4b74a;
+  --color-gold-300: #e0c76d;
+
+  /* Neutrals */
+  --color-offwhite: #f8f9fa;
+  --color-text-dark: #1a202c;
+  --color-text-gray: #4a5568;
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+/* Fade-in animation for scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gold underline accent */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-gold-500);
+}
+
+/* Topographic background pattern */
+.topo-bg {
+  background-image: url('/images/topo-pattern.svg');
+  background-repeat: repeat;
+}

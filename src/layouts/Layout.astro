@@ -1,0 +1,174 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Attorney",
+      "@id": "https://mattwilliams.law/#attorney",
+      "name": "Matthew C. Williams",
+      "jobTitle": "Attorney at Law",
+      "description": "Former prosecutor with 24+ years experience in criminal defense, family law, and civil litigation.",
+      "telephone": "(208) 271-5469",
+      "email": "matt@mattwilliams.law",
+      "url": "https://mattwilliams.law",
+      "image": "https://mattwilliams.law/images/matt-williams.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "839 E. Winding Creek Dr, Ste 200",
+        "addressLocality": "Eagle",
+        "addressRegion": "ID",
+        "postalCode": "83616",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Eagle", "addressRegion": "ID" },
+        { "@type": "City", "name": "Boise", "addressRegion": "ID" },
+        { "@type": "City", "name": "Meridian", "addressRegion": "ID" }
+      ],
+      "knowsAbout": ["Criminal Defense", "Family Law", "Civil Litigation", "DUI Defense"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of Idaho College of Law"
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://mattwilliams.law/#legalservice",
+      "name": "Williams Law",
+      "legalName": "Matthew C. Williams, Attorney at Law",
+      "description": "Criminal defense, family law, and civil litigation services in Eagle, Meridian, and Boise, Idaho.",
+      "url": "https://mattwilliams.law",
+      "telephone": "(208) 271-5469",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "839 E. Winding Creek Dr, Ste 200",
+        "addressLocality": "Eagle",
+        "addressRegion": "ID",
+        "postalCode": "83616",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "43.6959",
+        "longitude": "-116.3530"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.6959",
+          "longitude": "-116.3530"
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Legal Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criminal Defense" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Law" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Civil Litigation" } }
+        ]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://mattwilliams.law/#localbusiness",
+      "name": "Williams Law",
+      "image": "https://mattwilliams.law/images/matt-williams.jpg",
+      "telephone": "(208) 271-5469",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "839 E. Winding Creek Dr, Ste 200",
+        "addressLocality": "Eagle",
+        "addressRegion": "ID",
+        "postalCode": "83616",
+        "addressCountry": "US"
+      }
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mattwilliams.law/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://mattwilliams.law/images/matt-williams.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mattwilliams.law/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://mattwilliams.law/images/matt-williams.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="bg-white antialiased">
+    <slot />
+
+    <!-- Scroll animation script -->
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

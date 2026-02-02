@@ -1,0 +1,109 @@
+---
+const navLinks = [
+  { href: '#home', label: 'Home' },
+  { href: '#practice-areas', label: 'Practice Areas' },
+  { href: '#about', label: 'About' },
+  { href: '#results', label: 'Results' },
+  { href: '#contact', label: 'Contact' }
+];
+---
+
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2">
+        <span class="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold text-navy-900">
+          Williams<span class="text-gold-500">Law</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-text-gray hover:text-navy-900 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Section -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="tel:+12082715469" class="text-sm font-semibold text-navy-900">
+          (208) 271-5469
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center px-5 py-2.5 bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-sm rounded transition-colors"
+        >
+          Free Consultation
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-navy-900"
+        aria-label="Open menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="px-4 py-4 space-y-3">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="block py-2 text-base font-medium text-text-gray hover:text-navy-900"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-4 border-t border-gray-100">
+        <a href="tel:+12082715469" class="block py-2 text-base font-semibold text-navy-900">
+          (208) 271-5469
+        </a>
+        <a
+          href="#contact"
+          class="block mt-2 text-center px-5 py-3 bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold rounded transition-colors"
+        >
+          Free Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.getElementById('header');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Add shadow on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('shadow-md');
+    } else {
+      header?.classList.remove('shadow-md');
+    }
+  });
+</script>

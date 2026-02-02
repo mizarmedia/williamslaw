@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import PracticeAreas from '../components/PracticeAreas.astro';
+import WhyChoose from '../components/WhyChoose.astro';
+import Results from '../components/Results.astro';
+import About from '../components/About.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Williams Law | Criminal Defense & Family Law Attorney | Eagle, Idaho";
+const description = "Former prosecutor with 24+ years experience. Criminal defense, family law, civil litigation in Eagle, Meridian & Boise. Free consultation: (208) 271-5469";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Problem />
+    <PracticeAreas />
+    <WhyChoose />
+    <Results />
+    <About />
+    <Testimonials />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
