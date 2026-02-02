@@ -1,22 +1,16 @@
 ---
 const results = [
   {
-    amount: 'Mid-Six-Figure',
-    type: 'Settlement',
-    description: 'Southwest Airlines employment case resulting in substantial compensation for our client.',
-    category: 'Employment Law'
+    amount: '$400,000',
+    type: 'Jury Verdict',
+    description: 'Federal jury verdict for wrongfully terminated McCall Police Chief. Week-long trial in federal court.',
+    category: 'Wrongful Termination'
   },
   {
     amount: 'Favorable',
-    type: 'Verdict',
-    description: 'Civil rights victory against Middleton Police Department. Justice served.',
+    type: 'Settlement',
+    description: 'Civil rights case against Middleton Police Department for harassment and civil rights violations.',
     category: 'Civil Rights'
-  },
-  {
-    amount: 'Jury',
-    type: 'Verdict',
-    description: 'Wrongful termination case won before a jury. Full vindication for our client.',
-    category: 'Employment Law'
   }
 ];
 ---
@@ -34,7 +28,7 @@ const results = [
     </div>
 
     <!-- Results Cards -->
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       {results.map((result, index) => (
         <div
           class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center fade-in"
